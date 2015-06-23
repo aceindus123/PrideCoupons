@@ -1,0 +1,90 @@
+﻿body {
+    width:100%;
+   
+}
+.menustyle {
+    background-color:#0489B1;
+     height:46px;
+     color:white; 
+}
+
+.myMenu {
+	margin:0;
+	padding:0;
+   
+}
+.h2head {
+font-family:Arial,Verdana;
+font-size:26px;
+}
+.bg {
+    background-color: #EFF2FB;
+}
+.catbutton {
+width:150px;
+height:40px;
+background-color:#3498DB;
+font-weight:bold;
+color:white;
+}
+.catsubject {
+    font-weight:bold;
+    width:200px;
+color:#344E72;
+font:14px Arial, Helvetica, sans-serif #111;
+}
+
+
+.myMenu li {
+	list-style:none;
+	float:left;
+	font:14px Arial, Helvetica, sans-serif #111;
+    color:white;
+}
+
+.myMenu li a:link, .myMenu li a:visited {
+	display:block;
+	text-decoration:none;
+    color:white;
+	padding: 1em 2em;
+	margin:0;
+	border-right: 0px solid #fff;
+    font-size:17px;
+
+}
+
+.myMenu li a:hover {
+	background-color:#0DBAA6;	
+}
+
+/*style the sub menu*/
+.myMenu li ul {
+	position:absolute;
+	visibility:hidden;
+	border-top:1px solid #fff;
+	margin:0;
+	padding:0;
+}
+
+.myMenu li ul li {
+	display:inline;
+	float:none;
+}
+
+    .myMenu li ul li a {
+    font-size:16px;
+    
+    }
+
+.myMenu li ul li a:link, .myMenu li ul li a:visited {
+
+	width:auto;
+     background-color:#0A3151;
+    color:white;
+    font-size:16px;
+}
+
+.myMenu li ul li a:hover {
+	background-color:#0DBAA6;	
+
+}
