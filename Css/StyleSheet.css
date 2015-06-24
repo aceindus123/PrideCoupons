@@ -5,6 +5,7 @@
 .menustyle {
     background-color:#0489B1;
      height:46px;
+     width:400px;
      color:white; 
 }
 
@@ -15,7 +16,7 @@
 }
 .h2head {
 font-family:Arial,Verdana;
-font-size:26px;
+font-size:20px;
 }
 .bg {
     background-color: #EFF2FB;
@@ -30,9 +31,35 @@ color:white;
 .catsubject {
     font-weight:bold;
     width:200px;
+    height:50px;
 color:#344E72;
-font:14px Arial, Helvetica, sans-serif #111;
+font:13px Arial, Helvetica, sans-serif #111;
 }
+
+bottompara {
+text-align:justify;
+font:15px Arial;
+}
+
+.allcat {
+    padding-top:8px;
+    width:100%;
+}
+
+.cattd {
+    background-color:white; border:1px solid #EFFBF5;
+     width:20%;
+     text-align:center;
+     height:150px;
+}
+.tabletop {
+    padding-top:10px;
+}
+
+.tablebottom {
+    padding-bottom:10px;
+}
+
 
 
 .myMenu li {
@@ -49,7 +76,7 @@ font:14px Arial, Helvetica, sans-serif #111;
 	padding: 1em 2em;
 	margin:0;
 	border-right: 0px solid #fff;
-    font-size:17px;
+    font-size:16px;
 
 }
 
