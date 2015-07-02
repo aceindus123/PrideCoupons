@@ -2,6 +2,45 @@
     width:100%;
    
 }
+
+#wrapperclass {
+
+height:auto;
+width:200px;
+box-shadow:2px 2px 15px 2px #999;
+background-color:#FFF;
+}
+
+.simple 
+    { 
+       
+      text-decoration:none;
+      color:#006699; 
+      font-family:Segoe UI;
+      font-size:15px;
+    } 
+    .simple:hover 
+    { 
+       text-decoration:underline;
+      color:green; 
+      font-size:16px;
+      
+    } 
+    .active{
+	font-weight: bold;
+      font-family:Segoe UI;
+	font-size:17px;
+	color: DarkOrange;
+	text-decoration:none;
+
+}
+.linktop {
+font-family:Arial;
+	font-size:16px;
+    color:#2E9AFE;
+    
+
+}
 .menustyle {
     background-color:#0489B1;
      height:46px;

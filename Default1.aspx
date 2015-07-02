@@ -1,17 +1,14 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="Default.aspx.cs" Inherits="_Default" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="Default1.aspx.cs" Inherits="Default1" %>
+
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="ajx" %>
 <%@ Register Src="Usercontrols/Top.ascx" TagName="Top" TagPrefix="topcontrol" %>
 <%@ Register Src="Usercontrols/Bottom.ascx" TagName="Top" TagPrefix="bottomcontrol" %>
-
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <title>: : Pride Coupons : :</title>
-<%--    <link rel="stylesheet" type="text/css" href="http://w2ui.com/src/w2ui-1.4.min.css" />--%>
-    <link href="Css/StyleSheet.css" rel="stylesheet" />
+   <title>: : Pride Coupons1 : :</title>
 </head>
-
 <body>
     <form id="form1" runat="server">
     <div width="100%" class="bg">
@@ -25,249 +22,7 @@
                   </td>
               </tr>
 
-              <tr class="bg">
-                      <td align="center" colspan="2" class="h2head">
-                         <h4> Hot Coupons & Offers Of The Day</h4>
-                      </td>
-              </tr>
-
-                  <tr >
-                      <td align="center" width="95%" colspan="9" >
-                          <table align="center" style="width: 90%; " >
-                              <tr>
-                    <td  width="2%">
-                      &nbsp;
-                  </td>
-
-                            <td class="cattd">
-                      <table width="90%">
-                          <tr>
-                              <td align="center" class="tabletop">
-                                  <asp:Image runat="server" ID="cimg1" ImageUrl="~/Images/paytm.jpg" Height="50px" Width="125px"/>
-                              </td>
-                          </tr>
-                          <tr>
-                            <td class="catsubject"  >  
-                                Electronics Sale – Upto Rs.10,000 
-                                Cashback On Mobiles & Electronics 
-                            </td>
-                          </tr>
-                          <tr><td>&nbsp;</td></tr>
-                          <tr>
-                              <td align="center" class="tablebottom">
-                                  <asp:ImageButton ID="ImageButton40" runat="server"  ImageUrl="~/Images/getdeal.png" />
-                              </td>
-                          </tr>
-                      </table>
-                  </td>
-                                  
-                                   <td width="2%" >
-                                                    &nbsp;
-                                  </td>
-
-                   <td class="cattd">
-                      <table width="90%">
-                          <tr>
-                              <td align="center" class="tabletop" >
-                                  <asp:Image runat="server" ID="Image1" ImageUrl="~/Images/flipkart.jpg" Height="50px" Width="125px"/>
-                              </td>
-                          </tr>
-                          <tr>
-                            <td class="catsubject"   >  
-                               App Only – Big App Shopping Days – Upto 80% Off
-                                 New Offers + Extra 10% Off For SBI Users
-                            </td>
-                          </tr>
-                          <tr><td>&nbsp;</td></tr>
-
-                          <tr>
-                              <td align="center" class="tablebottom">
-                                  <asp:ImageButton ID="Button1" runat="server"  ImageUrl="~/Images/getoffer.png" />
-                              </td>
-                          </tr>
-                      </table>
-                  </td>
-
-                    <td  width="2%">
-                      &nbsp;
-                  </td>
-
-                   <td class="cattd">
-                       <table width="90%">
-                          <tr>
-                              <td align="center" class="tabletop">
-                                  <asp:Image runat="server" ID="Image2" ImageUrl="~/Images/amazon.jpg" Height="50px" Width="125px"/>
-                              </td>
-                          </tr>
-                          <tr>
-                            <td class="catsubject"  >  
-                                Super Deal – Wide Range Of Footwear Below Rs.499 
-                            </td>
-                          </tr>
-                          <tr><td>&nbsp;</td></tr>
-
-                          <tr>
-                              <td align="center" class="tablebottom">
-                                    <asp:ImageButton ID="ImageButton41" runat="server"  ImageUrl="~/Images/getdeal.png" />
-                              </td>
-                          </tr>
-                      </table>
-                  </td>
-
-                   <td width="2%" >
-                      &nbsp;
-                  </td>
-
-                   <td class="cattd">
-                      <table width="90%">
-                          <tr>
-                              <td align="center" class="tabletop">
-                                  <asp:Image runat="server" ID="Image3" ImageUrl="~/Images/travelguru.jpg" Height="50px" Width="125px"/>
-                              </td>
-                          </tr>
-                          <tr>
-                            <td class="catsubject"   >  
-                                Flat 8% Extra Off On Hotel Bookings – No Min Purchase
-                            </td>
-                          </tr>
-                          <tr><td>&nbsp;</td></tr>
-
-                          <tr>
-                              <td align="center" class="tablebottom">
-                                  <asp:ImageButton ID="ImageButton42" runat="server"  ImageUrl="~/Images/getoffer.png" />
-                              </td>
-                          </tr>
-                      </table>
-                  </td>
-
-                   <td  width="2%">
-                      &nbsp;
-                   </td>
-
-                              </tr>
-                          </table>
-                      </td>
-            
-              </tr>
-
-                 <tr >
-                      <td align="center" width="95%" colspan="9" >
-                          <table align="center" style="width: 90%; " >
-                              <tr>
-                    <td  width="2%">
-                      &nbsp;
-                  </td>
-
-                            <td class="cattd">
-                      <table width="90%">
-                          <tr>
-                              <td align="center" class="tabletop">
-                                  <asp:Image runat="server" ID="Image12" ImageUrl="~/Images/jabong.jpg" Height="50px" Width="125px"/>
-                              </td>
-                          </tr>
-                          <tr>
-                            <td class="catsubject"  >  
-                               Minimum 30% To 70% Off On Wide Range Of Products 
-                            </td>
-                          </tr>
-                          <tr><td>&nbsp;</td></tr>
-                          <tr>
-                              <td align="center" class="tablebottom">
-                                  <asp:ImageButton ID="ImageButton51" runat="server"  ImageUrl="~/Images/getdeal.png" />
-                              </td>
-                          </tr>
-                      </table>
-                  </td>
-                                  
-                                   <td width="2%" >
-                                                    &nbsp;
-                                  </td>
-
-                   <td class="cattd">
-                      <table width="90%">
-                          <tr>
-                              <td align="center" class="tabletop" >
-                                  <asp:Image runat="server" ID="Image13" ImageUrl="~/Images/goibibo.jpg" Height="50px" Width="125px"/>
-                              </td>
-                          </tr>
-                          <tr>
-                            <td class="catsubject"   >  
-                              Mobile App Offer – Rs.1000 Go Cash On Downloading The App
-                            </td>
-                          </tr>
-                          <tr><td>&nbsp;</td></tr>
-
-                          <tr>
-                              <td align="center" class="tablebottom">
-                                  <asp:ImageButton ID="ImageButton52" runat="server"  ImageUrl="~/Images/getoffer.png" />
-                              </td>
-                          </tr>
-                      </table>
-                  </td>
-
-                    <td  width="2%">
-                      &nbsp;
-                  </td>
-
-                   <td class="cattd">
-                       <table width="90%">
-                          <tr>
-                              <td align="center" class="tabletop">
-                                  <asp:Image runat="server" ID="Image14" ImageUrl="~/Images/snapdeal.jpg" Height="50px" Width="125px"/>
-                              </td>
-                          </tr>
-                          <tr>
-                            <td class="catsubject"  >  
-                                Accessories Sale – Upto 80% Off On Electronics & Fashion
-                            </td>
-                          </tr>
-                          <tr><td>&nbsp;</td></tr>
-
-                          <tr>
-                              <td align="center" class="tablebottom">
-                                    <asp:ImageButton ID="ImageButton53" runat="server"  ImageUrl="~/Images/getdeal.png" />
-                              </td>
-                          </tr>
-                      </table>
-                  </td>
-
-                   <td width="2%" >
-                      &nbsp;
-                  </td>
-
-                   <td class="cattd">
-                      <table width="90%">
-                          <tr>
-                              <td align="center" class="tabletop">
-                                  <asp:Image runat="server" ID="Image15" ImageUrl="~/Images/shopclues.jpg" Height="50px" Width="125px"/>
-                              </td>
-                          </tr>
-                          <tr>
-                            <td class="catsubject"   >  
-                                
-Upto 85% + Flat 14% Off On All Non-Electronics Products
-                            </td>
-                          </tr>
-                          <tr><td>&nbsp;</td></tr>
-
-                          <tr>
-                              <td align="center" class="tablebottom">
-                                  <asp:ImageButton ID="ImageButton54" runat="server"  ImageUrl="~/Images/getoffer.png" />
-                              </td>
-                          </tr>
-                      </table>
-                  </td>
-
-                   <td  width="2%">
-                      &nbsp;
-                   </td>
-
-                              </tr>
-                          </table>
-                      </td>
-            
-              </tr>
-
+       
                 
 
                   <tr class="bg">
@@ -393,17 +148,8 @@ Upto 85% + Flat 14% Off On All Non-Electronics Products
               </tr>
 
                          <tr>
-                  <td   colspan="7" >
-                      <table width="90%">
-                          <tr>
-                             
-                              <td align="right">
-                                   <asp:LinkButton ID="lnkmore" runat="server" Text="More ..." Font-Bold="true" Font-Underline="false" Font-Names="Arial"
-                                       OnClick="ImageButton74_Click"></asp:LinkButton>  
-                              </td>
-                          </tr>
-                      </table>
-                      <%--<asp:ImageButton ID="ImageButton74" runat="server" ImageUrl="~/Images/allelectronic.png" OnClick="ImageButton74_Click" />--%>
+                  <td align="center" class="allcat" colspan="7">
+                      <asp:ImageButton ID="ImageButton74" runat="server" ImageUrl="~/Images/allelectronic.png" OnClick="ImageButton74_Click" />
                   </td>
               </tr>
 
@@ -535,17 +281,8 @@ Upto 85% + Flat 14% Off On All Non-Electronics Products
 
 
                               <tr>
-                  <td  colspan="7">
-                      <%--<asp:ImageButton ID="ImageButton73" runat="server" ImageUrl="~/Images/allcooking.png" OnClick="ImageButton73_Click" />--%>
-                         <table width="90%">
-                          <tr>
-                             
-                              <td align="right">
-                                   <asp:LinkButton ID="LinkButton1" runat="server" Text="More ..." Font-Bold="true" Font-Underline="false" Font-Names="Arial" OnClick="LinkButton1_Click"
-                                      ></asp:LinkButton>  
-                              </td>
-                          </tr>
-                      </table>
+                  <td align="center" class="allcat" colspan="7">
+                      <asp:ImageButton ID="ImageButton73" runat="server" ImageUrl="~/Images/allcooking.png" OnClick="ImageButton73_Click" />
                   </td>
               </tr>
 
@@ -672,18 +409,8 @@ Upto 85% + Flat 14% Off On All Non-Electronics Products
             
               </tr>
                 <tr>
-                  <td colspan="7">
-                      <%--<asp:ImageButton ID="ImageButton72" runat="server" ImageUrl="~/Images/allfashion.png" OnClick="ImageButton72_Click" />--%>
-                                <table width="90%">
-                          <tr>
-                             
-                              <td align="right">
-                                   <asp:LinkButton ID="LinkButton2" runat="server" Text="More ..." Font-Bold="true" Font-Underline="false" Font-Names="Arial" OnClick="LinkButton2_Click" 
-                                      
-                                      ></asp:LinkButton>  
-                              </td>
-                          </tr>
-                      </table>
+                  <td align="center" class="allcat" colspan="7">
+                      <asp:ImageButton ID="ImageButton72" runat="server" ImageUrl="~/Images/allfashion.png" OnClick="ImageButton72_Click" />
                   </td>
               </tr>
 
@@ -810,18 +537,8 @@ Upto 85% + Flat 14% Off On All Non-Electronics Products
             
               </tr>
                 <tr>
-                  <td  colspan="7">
-                      <%--<asp:ImageButton ID="ImageButton71" runat="server" ImageUrl="~/Images/alltravel.png" OnClick="ImageButton71_Click" />--%>
-                                <table width="90%">
-                          <tr>
-                             
-                              <td align="right">
-                                   <asp:LinkButton ID="LinkButton3" runat="server" Text="More ..." Font-Bold="true" Font-Underline="false" Font-Names="Arial" OnClick="LinkButton3_Click"
-                                       
-                                      ></asp:LinkButton>  
-                              </td>
-                          </tr>
-                      </table>
+                  <td align="center" class="allcat" colspan="7">
+                      <asp:ImageButton ID="ImageButton71" runat="server" ImageUrl="~/Images/alltravel.png" OnClick="ImageButton71_Click" />
                   </td>
               </tr>
 
@@ -948,18 +665,8 @@ Upto 85% + Flat 14% Off On All Non-Electronics Products
             
               </tr>
               <tr>
-                  <td  colspan="7">
-                      <%--<asp:ImageButton ID="imgall" runat="server" ImageUrl="~/Images/allfood.png" OnClick="imgall_Click" />--%>
-                                <table width="90%">
-                          <tr>
-                             
-                              <td align="right">
-                                   <asp:LinkButton ID="LinkButton4" runat="server" Text="More ..." Font-Bold="true" Font-Underline="false" 
-                                       Font-Names="Arial" OnClick="LinkButton4_Click" 
-                                      ></asp:LinkButton>  
-                              </td>
-                          </tr>
-                      </table>
+                  <td align="center" class="allcat"  colspan="7">
+                      <asp:ImageButton ID="imgall" runat="server" ImageUrl="~/Images/allfood.png" OnClick="imgall_Click" />
                   </td>
               </tr>
           
@@ -1015,5 +722,4 @@ Upto 85% + Flat 14% Off On All Non-Electronics Products
           </table>
     </div>
     </form>
-</body>
-</html>
+</body></html>
