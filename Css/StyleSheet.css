@@ -3,6 +3,65 @@
    
 }
 
+.btncursor {
+cursor:pointer;
+width:160px;
+height:40px;
+font-family:Arial;
+font-style:italic;
+font-weight:bold;
+color:white;
+background-color:#3496DB;
+border:none;
+font-size:14px;
+text-align:center
+}
+
+.btncursor:hover {
+cursor:pointer;
+width:160px;
+height:40px;
+font-family:Arial;
+font-style:italic;
+font-weight:bold;
+color:white;
+background-color:#D8CEF6;
+border:none;
+font-size:14px;
+}
+
+
+.btncursor1 {
+cursor:pointer;
+width:160px;
+height:40px;
+font-family:Arial;
+font-style:italic;
+font-weight:bold;
+color:white;
+background-color:#0F705D;
+border:none;
+font-size:14px;
+text-align:center
+}
+
+.btncursor1:hover {
+cursor:pointer;
+width:160px;
+height:40px;
+font-family:Arial;
+font-style:italic;
+font-weight:bold;
+color:white;
+background-color:#81F79F;
+border:none;
+font-size:14px;
+text-align:center
+}
+
+
+
+
 #wrapperclass {
 
 height:auto;
@@ -13,7 +72,6 @@ background-color:#FFF;
 
 .simple 
     { 
-       
       text-decoration:none;
       color:#006699; 
       font-family:Segoe UI;
@@ -57,9 +115,11 @@ font-family:Arial;
 font-family:Arial,Verdana;
 font-size:20px;
 }
+
 .bg {
     background-color: #EFF2FB;
 }
+
 .catbutton {
 width:150px;
 height:40px;
@@ -67,6 +127,7 @@ background-color:#3498DB;
 font-weight:bold;
 color:white;
 }
+
 .catsubject {
     font-weight:bold;
     width:200px;
@@ -86,20 +147,19 @@ font:15px Arial;
 }
 
 .cattd {
-    background-color:white; border:1px solid #EFFBF5;
-     width:20%;
-     text-align:center;
-     height:150px;
+    background-color: white;
+    border: 1px solid #EFFBF5;
+    width: 300px;
+    height: 220px;
 }
 .tabletop {
-    padding-top:10px;
+    padding-top: 10px;
+
 }
 
 .tablebottom {
     padding-bottom:10px;
 }
-
-
 
 .myMenu li {
 	list-style:none;
@@ -116,7 +176,6 @@ font:15px Arial;
 	margin:0;
 	border-right: 0px solid #fff;
     font-size:16px;
-
 }
 
 .myMenu li a:hover {
@@ -152,5 +211,4 @@ font:15px Arial;
 
 .myMenu li ul li a:hover {
 	background-color:#0DBAA6;	
-
 }
