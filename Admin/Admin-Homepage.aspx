@@ -27,6 +27,13 @@
              </tr>
              <tr><td>  <br /></td></tr>
              <tr>
+                 <td>
+                     <asp:LinkButton ID="lnkhome" runat="server" PostBackUrl="~/Admin/Admin-Homepage.aspx" Text="Home"></asp:LinkButton>
+                     <asp:LinkButton ID="lnkoffers" runat="server" PostBackUrl="~/Admin/UploadOffers.aspx" Text="Offers"></asp:LinkButton>
+
+                 </td>
+             </tr>
+             <tr>
                  <td  align="right" class="upload">
                      <asp:Label ID="lbl1" runat="server" Text="Select Category"></asp:Label>
                  </td>
@@ -40,6 +47,8 @@
                          <asp:ListItem>Food Items</asp:ListItem>
                          <asp:ListItem>Home & Furniture</asp:ListItem>--%>
                      </asp:DropDownList>
+  <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="ddcategory" ValidationGroup="submit" ForeColor="Red"
+                  InitialValue="Select"         ErrorMessage="Select Category"></asp:RequiredFieldValidator>
                  </td>
              </tr>
                <tr>
@@ -50,6 +59,8 @@
                  <td class="upload1">
                      <asp:DropDownList ID="ddsub" runat="server" AutoPostBack="true" Width="180px" >
                      </asp:DropDownList>
+                       <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ControlToValidate="ddsub" ValidationGroup="submit" ForeColor="Red"
+                  InitialValue="Select"         ErrorMessage="Select Sub Category"></asp:RequiredFieldValidator>
                  </td>
              </tr>
                <tr>
@@ -70,8 +81,8 @@
                  </td>
                  <td><b>&nbsp;&nbsp;:&nbsp;&nbsp;</b></td>
                  <td class="upload1">
-                    <asp:RadioButton ID="rdcode" runat="server" AutoPostBack="true" Text="Code" OnCheckedChanged="rdcode_CheckedChanged" GroupName="a" />
-                    <asp:RadioButton ID="rdoffer" runat="server" AutoPostBack="true" Text="Offer" OnCheckedChanged="rdoffer_CheckedChanged"  GroupName="a"/>
+                    <asp:RadioButton ID="rdcode" runat="server" AutoPostBack="true" Text="Code" OnCheckedChanged="rdcode_CheckedChanged" GroupName="a"  />
+                    <asp:RadioButton ID="rdoffer" runat="server" AutoPostBack="true" Text="Offer" OnCheckedChanged="rdoffer_CheckedChanged"  GroupName="a" Checked="true"/>
 
                  </td>
              </tr>
@@ -83,6 +94,8 @@
                  <td><b>&nbsp;&nbsp;&nbsp;&nbsp;</b></td>
                  <td class="upload1">
                      <asp:TextBox ID="txtcode" runat="server" Width="80px"></asp:TextBox>
+                        <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" ControlToValidate="txtcode" ValidationGroup="submit" ForeColor="Red"
+                          ErrorMessage="Enter Promo Code"></asp:RequiredFieldValidator>
                  </td>
              </tr>
 
@@ -95,6 +108,8 @@
                  <td class="upload1">
                      <asp:DropDownList ID="ddcompany" runat="server" AutoPostBack="true" Width="180px">
                      </asp:DropDownList>
+                     <asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" ControlToValidate="ddcompany" ValidationGroup="submit" ForeColor="Red"
+                  InitialValue="Select" ErrorMessage="Select Company"></asp:RequiredFieldValidator>
                  </td>
              </tr>
                <tr>
@@ -110,10 +125,12 @@
                          <asp:ListItem> 3 (One Month)</asp:ListItem>
                          <asp:ListItem> 4 (Alldays)</asp:ListItem>
                      </asp:DropDownList>
+                      <asp:RequiredFieldValidator ID="RequiredFieldValidator6" runat="server" ControlToValidate="ddpriority" ValidationGroup="submit" ForeColor="Red"
+                  InitialValue="Select"         ErrorMessage="Select Priority"></asp:RequiredFieldValidator>
                  </td>
              </tr>
 
-              <tr>
+              <%--<tr>
                  <td  align="right" class="upload">
                      <asp:Label ID="Label5" runat="server" Text="Upload Company Logo"></asp:Label>
                  </td>
@@ -121,7 +138,8 @@
                  <td class="upload1">
                    <asp:FileUpload ID="uploadfile"  runat="server" Width="180px"/>
                  </td>
-             </tr>
+             </tr>--%>
+
                 <tr>
                  <td  align="right" class="upload">
                      <asp:Label ID="Label6" runat="server" Text="Domain Link"></asp:Label>

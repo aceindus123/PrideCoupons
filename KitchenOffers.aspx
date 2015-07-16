@@ -12,10 +12,11 @@
 </head>
 <body>
     <form id="form1" runat="server">
-    <div width="100%" class="bg">
+  <div style="width:100%;text-align:center" >
+
         <ajx:ToolkitScriptManager ID="tv" runat="server"></ajx:ToolkitScriptManager>
 
-          <table width="100%" align="center">
+          <table class="bg1">
                <tr>
                   <td>
                      <topcontrol:Top ID="top1" runat="server"></topcontrol:Top>
@@ -28,123 +29,43 @@
                   </td>
               </tr>
 
-                       <tr >
-                      <td align="center" width="95%" colspan="9" >
-                          <table align="center" style="width: 90%; " >
-                              <tr>
-                    <td  width="2%">
-                      &nbsp;
-                  </td>
-
-                            <td class="cattd">
-                      <table width="90%">
-                          <tr>
-                              <td align="center" class="tabletop">
-                                  <asp:Image runat="server" ID="Image8" ImageUrl="~/Images/shopclues.jpg" Height="50px" Width="125px"/>
-                              </td>
-                          </tr>
-                          <tr>
-                            <td class="catsubject"  >  
-                               Upto 85% + Flat 14% Off On All Non-Electronics Products
-                            </td>
-                          </tr>
-                          <tr><td>&nbsp;</td></tr>
-                          <tr>
-                              <td align="center" class="tablebottom">
-                                  <asp:ImageButton ID="ImageButton47" runat="server"  ImageUrl="~/Images/getdeal.png" />
-                              </td>
-                          </tr>
-                      </table>
-                  </td>
-                                  
-                                   <td width="2%" >
-                                                    &nbsp;
-                                  </td>
-
-                   <td class="cattd">
-                      <table width="90%">
-                          <tr>
-                              <td align="center" class="tabletop" >
-                                  <asp:Image runat="server" ID="Image9" ImageUrl="~/Images/snapdeal.jpg" Height="50px" Width="125px"/>
-                              </td>
-                          </tr>
-                          <tr>
-                            <td class="catsubject"   >  
-                               Upto 50% Off On Home & Personal Appliances
-                            </td>
-                          </tr>
-                          <tr><td>&nbsp;</td></tr>
-
-                          <tr>
-                              <td align="center" class="tablebottom">
-                                  <asp:ImageButton ID="ImageButton48" runat="server"  ImageUrl="~/Images/getoffer.png" />
-                              </td>
-                          </tr>
-                      </table>
-                  </td>
-
-                    <td  width="2%">
-                      &nbsp;
-                  </td>
-
-                   <td class="cattd">
-                       <table width="90%">
-                          <tr>
-                              <td align="center" class="tabletop">
-                                  <asp:Image runat="server" ID="Image10" ImageUrl="~/Images/flipkart.jpg" Height="50px" Width="125px"/>
-                              </td>
-                          </tr>
-                          <tr>
-                            <td class="catsubject"  >  
-                                Electronics Sale – Upto Rs.10,000 
-                                Cashback On Mobiles & Electronics 
-                            </td>
-                          </tr>
-                          <tr><td>&nbsp;</td></tr>
-
-                          <tr>
-                              <td align="center" class="tablebottom">
-                                    <asp:ImageButton ID="ImageButton49" runat="server"  ImageUrl="~/Images/getdeal.png" />
-                              </td>
-                          </tr>
-                      </table>
-                  </td>
-
-                   <td width="2%" >
-                      &nbsp;
-                  </td>
-
-                   <td class="cattd">
-                      <table width="90%">
-                          <tr>
-                              <td align="center" class="tabletop">
-                                  <asp:Image runat="server" ID="Image11" ImageUrl="~/Images/amazon.jpg" Height="50px" Width="125px"/>
-                              </td>
-                          </tr>
-                          <tr>
-                            <td class="catsubject"   >  
-                                Laptops – Upto 25% On Best Selling Laptops
-                            </td>
-                          </tr>
-                          <tr><td>&nbsp;</td></tr>
-
-                          <tr>
-                              <td align="center" class="tablebottom">
-                                  <asp:ImageButton ID="ImageButton50" runat="server"  ImageUrl="~/Images/getoffer.png" />
-                              </td>
-                          </tr>
-                      </table>
-                  </td>
-
-                   <td  width="2%">
-                      &nbsp;
-                   </td>
-
-                              </tr>
-                          </table>
-                      </td>
-            
-              </tr>
+                 <tr>
+                                             <td>
+                                                 <table>
+                                                     <tr>
+                                                         <td>
+                                                                <asp:DataList ID="DataList1" runat="server" width="60%"  RepeatColumns="4"  OnItemDataBound="Item_Bound1" 
+                                                                 onitemcommand="DataList1_ItemCommand2" CellPadding="8" CellSpacing="0" Height="150px">
+                                                                 <ItemTemplate>
+                                       
+                                                                   <table width="80%"  align="center" class="cattd" >
+                                                                       <tr>
+                                                                          <td align="center" class="tabletop">
+                                                                              <asp:Image runat="server" ID="cimg2" ImageUrl='<%# Eval("imagepath") %>' Height="60px" Width="150px"/>
+                                                                          </td>
+                                                                      </tr>
+                                                                      <tr>
+                                                                          <td class="catsubject" align="center"  >  
+                                                                            <asp:Label ID="lbldesc1" runat="server" Text='<%# Eval("discription") %>'></asp:Label>
+                                                                         </td>
+                                                                      </tr>
+                                                                      <tr><td>&nbsp;</td></tr>
+                                                                      <tr>
+                                                                          <td align="center" class="tablebottom">
+                                                                              <asp:Button ID="dlbtn" runat="server"  Text='<%# Eval("catcode") %>' CssClass="btncursor" 
+                                                                                  CommandName="dlcoupon" CommandArgument='<%# Eval("id") %>'  />
+                                                                              <asp:Button ID="dlbtn1" runat="server"  Text='<%# Eval("code") %>' CssClass="btncursor" Visible="false" Enabled="false"  />
+                                                                          </td>
+                                                                      </tr>
+                                                                  </table>
+                                                                 </ItemTemplate>
+                                                              </asp:DataList>
+                                                          </td>
+                                             <asp:Label ID="lblnorecord" runat="server" ></asp:Label>
+                                     </tr>
+                                                 </table>
+                                             </td>
+                                         </tr>
 
                <tr>
                   <td>

@@ -11,4 +11,16 @@ public partial class Usercontrols_Top : System.Web.UI.UserControl
     {
 
     }
+    protected void ImageButton4_Click(object sender, ImageClickEventArgs e)
+    {
+        Response.Redirect("http://www.shopclues.com/");
+    }
+    protected void ImageButton13_Click(object sender, ImageClickEventArgs e)
+    {
+        Response.Redirect("http://www.shopclues.com/mobiles.html");
+    }
+    protected void ImageButton19_Click(object sender, ImageClickEventArgs e)
+    {
+        Response.Redirect("http://www.shopclues.com/fashion.html");
+    }
 }

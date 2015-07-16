@@ -38,8 +38,9 @@
 {
 	font-size: 15px;
 	font-weight: bold;
-	color: #000;
+	color: #086584;
 	font-family: sans-serif;
+
 }
 .fancy .ajax__tab_active .ajax__tab_outer, .fancy .ajax__tab_header .ajax__tab_outer, .fancy .ajax__tab_hover .ajax__tab_outer
 {
@@ -65,7 +66,8 @@
 	border-top: 0;
 	border:1px solid #999999;
 	padding: 15px;
-	background-color: #B4DFED;
+	/*background-color: #B4DFED;*/
+    background-color: #dddddd;
 }
 
         .auto-style1 {
@@ -73,16 +75,17 @@
         }
 
     </style>
+
 <div width="100%">
     <table width="100%" align="center">
                <tr>
                   <td width="98%"  colspan="2">
-                      <table width="100%" background="images/Logo.png">
+                      <table width="100%" background="images/Logo.png" style="background-image:url(images/Logo.png); background-repeat:no-repeat;">
                           <tr>
                               <td width="40%">
-                                 <%--<asp:ImageButton ID="homelogobtn" runat="server" ImageUrl="~/Images/Logo.png" PostBackUrl="~/Default.aspx" />--%>
+                                 &nbsp;<%--<asp:ImageButton ID="homelogobtn" runat="server" ImageUrl="~/Images/Logo.png" PostBackUrl="~/Default.aspx" />--%>
                               </td>
-                              <td align="center" width="60%">
+                              <td align="center" width="40%">
                                   <asp:ImageButton ID="ImageButton77" runat="server" ImageUrl="~/Images/bnner.gif" PostBackUrl="~/Default.aspx" Width="800px" Height="100px" />
                               </td>
                           </tr>
@@ -94,11 +97,7 @@
               <tr class="menustyle"  >
                   <td >
                                    <ul class="myMenu">
-                               <%--         <li><a href="Default.aspx">Home</a>
-                          
-                                         	</li>--%>
-
-	                                      <li><a href="#">Shopping</a>
+                  	                                      <li><a href="#">Shopping</a>
                                                        <ul>
         	                                                <li><a href="#">Electronics</a> </li>
                                                             <li><a href="#">Fashions</a></li>
@@ -132,7 +131,7 @@
                       <table>
                           <tr>
                               <td>
-                      <asp:TextBox ID="txtserch" runat="server" Height="35px" Width="430px" Font-Size="16px" ></asp:TextBox>
+                      <asp:TextBox ID="txtserch" runat="server" Height="35px" Width="400px" Font-Size="16px" ></asp:TextBox>
                                   <ajx:TextBoxWatermarkExtender ID="TextBoxWatermarkExtender1" runat="server" TargetControlID="txtserch" WatermarkText="Search For Your Favourite Store " />
  
                    
@@ -149,11 +148,11 @@
                           <tr>
                               <td colspan="4" align="center" >
 
-                                  <ajx:TabContainer ID="TabContainer1" runat="server" CssClass="fancy fancy-green">
+                                  <ajx:TabContainer ID="TabContainer1" runat="server" CssClass="fancy fancy-green" ActiveTabIndex="0">
 
                                           <ajx:TabPanel ID="TabPanel3" runat="server" >
                                             <HeaderTemplate>
-                                              Home
+                                            <span style="color:#308EC2;">   Home</span>
                                             </HeaderTemplate>
                                             <ContentTemplate>
                                              <asp:Panel ID="Panel5" runat="server">
@@ -171,7 +170,7 @@
 
                                             <ajx:TabPanel ID="tbpnluser" runat="server" >
                                             <HeaderTemplate>
-                                               Top Online Stores
+                                             <span style="color:#308EC2;">   Top Online Stores</span>
                                             </HeaderTemplate>
                                             <ContentTemplate>
                                              <asp:Panel ID="UserReg" runat="server">
@@ -183,7 +182,7 @@
                                                              <asp:ImageButton ID="ImageButton1" runat="server" ImageUrl="~/Images/amazon.jpg" Height="50px" Width="125px" />&nbsp;&nbsp;
                                                              <asp:ImageButton ID="ImageButton2" runat="server" ImageUrl="~/Images/ebay.jpg"  Height="50px" Width="125px"/>&nbsp;&nbsp;
                                                              <asp:ImageButton ID="ImageButton3" runat="server" ImageUrl="~/Images/snapdeal.jpg"  Height="50px" Width="125px"/>&nbsp;&nbsp;
-                                                             <asp:ImageButton ID="ImageButton4" runat="server" ImageUrl="~/Images/shopclues.jpg"  Height="50px" Width="125px"/>&nbsp;&nbsp;
+                                                             <asp:ImageButton ID="ImageButton4" runat="server" ImageUrl="~/Images/shopclues.jpg"  Height="50px" Width="125px" OnClick="ImageButton4_Click"  OnClientClick="form1.target ='_blank';" />&nbsp;&nbsp;
                                                              <asp:ImageButton ID="ImageButton5" runat="server" ImageUrl="~/Images/indiatimesshopping.jpg"  Height="50px" Width="125px"/>&nbsp;&nbsp;
                                                              <asp:ImageButton ID="ImageButton6" runat="server" ImageUrl="~/Images/jabong.jpg"  Height="50px" Width="125px"/>&nbsp;&nbsp;
                                                              <asp:ImageButton ID="ImageButton7" runat="server" ImageUrl="~/Images/yatra.jpg"  Height="50px" Width="125px"/>&nbsp;&nbsp;
@@ -196,7 +195,7 @@
 
                                             <ajx:TabPanel ID="tbpnlusrdetails" runat="server" >
                                             <HeaderTemplate>
-                                                 Mobile & Electronics
+                                                <span style="color:#308EC2;">  Mobile & Electronics</span>
                                             </HeaderTemplate>
                                             <ContentTemplate>
                                             <asp:Panel ID="Panel1" runat="server">
@@ -209,7 +208,7 @@
                                                              <asp:ImageButton ID="ImageButton10" runat="server" ImageUrl="~/Images/snapdeal.jpg"  Height="50px" Width="125px"/>&nbsp;&nbsp;
                                                              <asp:ImageButton ID="ImageButton11" runat="server" ImageUrl="~/Images/infibeam.jpg"  Height="50px" Width="125px"/>&nbsp;&nbsp;
                                                              <asp:ImageButton ID="ImageButton12" runat="server" ImageUrl="~/Images/jabong.jpg"  Height="50px" Width="125px"/>&nbsp;&nbsp;
-                                                             <asp:ImageButton ID="ImageButton13" runat="server" ImageUrl="~/Images/shopclues.jpg"  Height="50px" Width="125px"/>&nbsp;&nbsp;
+                                                             <asp:ImageButton ID="ImageButton13" runat="server" ImageUrl="~/Images/shopclues.jpg"  Height="50px" Width="125px" OnClick="ImageButton13_Click"  OnClientClick="form1.target ='_blank';"/>&nbsp;&nbsp;
                                                              <asp:ImageButton ID="ImageButton14" runat="server" ImageUrl="~/Images/ebay.jpg"  Height="50px" Width="125px"/>&nbsp;&nbsp;
                                                              <asp:ImageButton ID="ImageButton15" runat="server" ImageUrl="~/Images/indiatimesshopping.jpg"  Height="50px" Width="125px"/>&nbsp;&nbsp;
                                                          </td>
@@ -221,7 +220,7 @@
 
                                             <ajx:TabPanel ID="tbpnljobdetails" runat="server" >
                                             <HeaderTemplate>
-                                            Clothing & Shoes
+                                           <span style="color:#308EC2;">  Clothing & Shoes</span>
                                             </HeaderTemplate>
                                             <ContentTemplate>
                                             <asp:Panel ID="Panel2" runat="server"> 
@@ -232,7 +231,7 @@
                                                              <asp:ImageButton ID="ImageButton16" runat="server" ImageUrl="~/Images/indiatimesshopping.jpg" Height="50px" Width="125px" />&nbsp;&nbsp;
                                                              <asp:ImageButton ID="ImageButton17" runat="server" ImageUrl="~/Images/yepme.jpg" Height="50px" Width="125px" />&nbsp;&nbsp;
                                                              <asp:ImageButton ID="ImageButton18" runat="server" ImageUrl="~/Images/fashionara.jpg"  Height="50px" Width="125px"/>&nbsp;&nbsp;
-                                                             <asp:ImageButton ID="ImageButton19" runat="server" ImageUrl="~/Images/shopclues.jpg"  Height="50px" Width="125px"/>&nbsp;&nbsp;
+                                                             <asp:ImageButton ID="ImageButton19" runat="server" ImageUrl="~/Images/shopclues.jpg"  Height="50px" Width="125px" OnClick="ImageButton19_Click"  OnClientClick="form1.target ='_blank';"/>&nbsp;&nbsp;
                                                              <asp:ImageButton ID="ImageButton20" runat="server" ImageUrl="~/Images/jabong.jpg"  Height="50px" Width="125px"/>&nbsp;&nbsp;
                                                              <asp:ImageButton ID="ImageButton21" runat="server" ImageUrl="~/Images/amazon.jpg"  Height="50px" Width="125px"/>&nbsp;&nbsp;
                                                              <asp:ImageButton ID="ImageButton22" runat="server" ImageUrl="~/Images/flipkart.jpg"  Height="50px" Width="125px"/>&nbsp;&nbsp;
@@ -246,7 +245,7 @@
 
                                             <ajx:TabPanel ID="TabPanel1" runat="server" >
                                             <HeaderTemplate>
-                                            Flights & Hotels
+                                            <span style="color:#308EC2;"> Flights & Hotels</span>
                                             </HeaderTemplate>
                                             <ContentTemplate>
                                             <asp:Panel ID="Panel3" runat="server"> 
@@ -271,7 +270,7 @@
 
                                             <ajx:TabPanel ID="TabPanel2" runat="server" >
                                             <HeaderTemplate>
-                                            Online Food Orders
+                                           <span style="color:#308EC2;"> Online Food Orders</span>
                                             </HeaderTemplate>
                                             <ContentTemplate>
                                             <asp:Panel ID="Panel4" runat="server"> 

@@ -11,7 +11,8 @@ font-family:Arial;
 font-style:italic;
 font-weight:bold;
 color:white;
-background-color:#3496DB;
+/*background-color:#3496DB;*/
+background-color:#A9E2F3;
 border:none;
 font-size:14px;
 text-align:center
@@ -25,7 +26,8 @@ font-family:Arial;
 font-style:italic;
 font-weight:bold;
 color:white;
-background-color:#D8CEF6;
+background-color:#4F7A9A;
+
 border:none;
 font-size:14px;
 }
@@ -39,7 +41,8 @@ font-family:Arial;
 font-style:italic;
 font-weight:bold;
 color:white;
-background-color:#0F705D;
+/*background-color:#0F705D;*/
+background-color:#BDBDBD;
 border:none;
 font-size:14px;
 text-align:center
@@ -53,14 +56,105 @@ font-family:Arial;
 font-style:italic;
 font-weight:bold;
 color:white;
-background-color:#81F79F;
+/*background-color:#81F79F;*/
+background-color:#6E6E6E;
 border:none;
 font-size:14px;
 text-align:center
 }
+.btncursor2 {
+    cursor: pointer;
+    width: 160px;
+    height: 40px;
+    font-family: Arial;
+    font-style: italic;
+    font-weight: bold;
+    color: white;
+    /*background-color:#0F705D;*/
+    background-color: #6E6E6E;
+    border: none;
+    font-size: 14px;
+    text-align: center;
+}
 
+.btncursor3 {
+    cursor: pointer;
+    width: 160px;
+    height: 40px;
+    font-family: Arial;
+    font-style: italic;
+    font-weight: bold;
+    color: white;
+    /*background-color:#0F705D;*/
+    background-color: #4F7A9A;
+    border: none;
+    font-size: 14px;
+    text-align: center;
+}
 
+.h2head {
+font-family:Arial,Verdana;
+font-size:20px;
+}
 
+.bg {
+    background-color: #EFF2FB;
+}
+
+.bg1 {
+width:100%;
+text-align:center;
+background-color:#D2E0F1;
+}
+
+.catbutton {
+width:150px;
+height:40px;
+background-color:#3498DB;
+font-weight:bold;
+color:white;
+}
+
+.catsubject {
+    font-weight:bold;
+    width:200px;
+    height:50px;
+color:#344E72;
+font:13px Arial, Helvetica, sans-serif #111;
+}
+
+bottompara {
+text-align:justify;
+font:15px Arial;
+}
+
+.allcat {
+    padding-top:8px;
+    width:100%;
+}
+
+.cattd {
+    background-color: white;
+    border: 1px solid #EFFBF5;
+    width: 305px;
+    height: 220px;
+}
+
+.cattd1 {
+    background-color: white;
+    border: 1px solid #EFFBF5;
+    width: 250px;
+    height: 220px;
+}
+
+.tabletop {
+    padding-top: 10px;
+
+}
+
+.tablebottom {
+    padding-bottom:10px;
+}
 
 #wrapperclass {
 
@@ -100,66 +194,25 @@ font-family:Arial;
 
 }
 .menustyle {
-    background-color:#0489B1;
+    /*background-color:#0489B1;*/
+   /*background-color:#4B98B2;*/
+  /*background-color: #BDBDBD;*/
+    background-color: #9FC5D7;
      height:46px;
-     width:400px;
-     color:white; 
+     width:600px;
+    
 }
 
 .myMenu {
 	margin:0;
 	padding:0;
+    /*color:#308EC2;*/
+    /*background-color:#308EC2;*/
+    background-color:#4F7A9A;
+
    
 }
-.h2head {
-font-family:Arial,Verdana;
-font-size:20px;
-}
 
-.bg {
-    background-color: #EFF2FB;
-}
-
-.catbutton {
-width:150px;
-height:40px;
-background-color:#3498DB;
-font-weight:bold;
-color:white;
-}
-
-.catsubject {
-    font-weight:bold;
-    width:200px;
-    height:50px;
-color:#344E72;
-font:13px Arial, Helvetica, sans-serif #111;
-}
-
-bottompara {
-text-align:justify;
-font:15px Arial;
-}
-
-.allcat {
-    padding-top:8px;
-    width:100%;
-}
-
-.cattd {
-    background-color: white;
-    border: 1px solid #EFFBF5;
-    width: 300px;
-    height: 220px;
-}
-.tabletop {
-    padding-top: 10px;
-
-}
-
-.tablebottom {
-    padding-bottom:10px;
-}
 
 .myMenu li {
 	list-style:none;
@@ -179,8 +232,12 @@ font:15px Arial;
 }
 
 .myMenu li a:hover {
-	background-color:#0DBAA6;	
+	/*background-color:#0DBAA6;*/	
+    background-color:#4F7A9A;
 }
+/*.myMenu  li  a:hover  {
+background-color:#9CA2A4; 
+}*/
 
 /*style the sub menu*/
 .myMenu li ul {

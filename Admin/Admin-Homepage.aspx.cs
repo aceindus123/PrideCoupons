@@ -19,8 +19,6 @@ public partial class Admin_Admin_Homepage : System.Web.UI.Page
             try
             {
                 code.Visible = false;
-
-
                 SqlDataAdapter da = new SqlDataAdapter("Select * from Category order by id asc", con);
                 DataSet ds = new DataSet();
                 da.Fill(ds);
@@ -48,39 +46,71 @@ public partial class Admin_Admin_Homepage : System.Web.UI.Page
         try
         {
             string code = "";
+            int code1;
             string priority = "";
+            string catcode="";
+
             if (rdcode.Checked == true)
             {
+                code1 = 1;
                 code = txtcode.Text;
+                catcode = "NO";
             }
             else
             {
-                code = "Deal Activated";
+                code1 = 0;
+                code = "NO";
+                catcode = "YES";
             }
-            if (ddpriority.SelectedItem.Text == "1")
+           
+
+            if (ddpriority.SelectedItem.Text == " 1 (One Day or Today)")
             {
                 priority = "1";
             }
-            else if (ddpriority.SelectedItem.Text == "2")
+            else if (ddpriority.SelectedItem.Text == " 2 (One Week)")
             {
                 priority = "2";
             }
-            else if (ddpriority.SelectedItem.Text == "3")
+            else if (ddpriority.SelectedItem.Text == " 3 (One Month)")
             {
                 priority = "3";
             }
-            else if (ddpriority.SelectedItem.Text == "4")
+            else if (ddpriority.SelectedItem.Text == " 4 (Alldays)")
             {
                 priority = "4";
             }
 
+            string cat = ddcategory.SelectedItem.Text;
+            string subcat = ddsub.SelectedItem.Text;
+            string dis = txtdes.Text;
+            int catcode2 = code1;
+            string catcode1 = catcode;
+
+            string codee = code;
+            string com = ddcompany.SelectedItem.Text;
+            string pri = priority;
+            string path = "http://pridecoupons.com/images/" + ddcompany.SelectedItem.Text + ".jpg";
+            string tag = txttag.Text;
+            string date=Convert.ToString(System.DateTime.Now);
+
+
+            string qry = "insert into coupons_cat(catagory,subcat,discription,catcode,code,catoffer,company,proiority,imagepath,tag,posteddate)   values('"+cat+"','"+subcat+"','"+dis+"','"+catcode2+"','"+codee+"','"+catcode1+"','"+com+"','"+pri+"','"+path+"','"+tag+"','"+date+"')";
+            con.Open();
+            SqlCommand cmd = new SqlCommand(qry, con);
+            cmd.ExecuteNonQuery();
+            con.Close();
+
+            clear();
+
             string alert = "alert('Offer Added Successfully')";
             Page.ClientScript.RegisterStartupScript(this.GetType(), "alert box", alert, true);
-            clear();
         }
         catch (Exception ex)
         {
+
         }
+
     }
 
     protected void ddcategory_SelectedIndexChanged(object sender, EventArgs e)

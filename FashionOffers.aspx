@@ -11,10 +11,11 @@
 </head>
 <body>
     <form id="form1" runat="server">
-     <div width="100%" class="bg">
+ <div style="width:100%;text-align:center" >
+
         <ajx:ToolkitScriptManager ID="tv" runat="server"></ajx:ToolkitScriptManager>
 
-          <table width="100%" align="center">
+          <table class="bg1">
                <tr>
                   <td>
                      <topcontrol:Top ID="top1" runat="server"></topcontrol:Top>
@@ -26,122 +27,44 @@
                     <h2> <i> Fashion  Offers </i></h2>
                   </td>
               </tr>
-                    <tr >
-                      <td align="center" width="95%" colspan="9" >
-                          <table align="center" style="width: 90%; " >
-                              <tr>
-                    <td  width="2%">
-                      &nbsp;
-                  </td>
-
-                            <td class="cattd">
-                      <table width="90%">
-                          <tr>
-                              <td align="center" class="tabletop">
-                                  <asp:Image runat="server" ID="Image20" ImageUrl="~/Images/yepme.jpg" Height="50px" Width="125px"/>
-                              </td>
-                          </tr>
-                          <tr>
-                            <td class="catsubject"  >  
-                               Buy 1 Get 1 Free + Extra 10% Off Across Site – No Min Purchase
-                            </td>
-                          </tr>
-                          <tr><td>&nbsp;</td></tr>
-                          <tr>
-                              <td align="center" class="tablebottom">
-                                  <asp:ImageButton ID="ImageButton59" runat="server"  ImageUrl="~/Images/getdeal.png" />
-                              </td>
-                          </tr>
-                      </table>
-                  </td>
-                                  
-                                   <td width="2%" >
-                                                    &nbsp;
-                                  </td>
-
-                   <td class="cattd">
-                      <table width="90%">
-                          <tr>
-                              <td align="center" class="tabletop" >
-                                  <asp:Image runat="server" ID="Image21" ImageUrl="~/Images/jabong.jpg" Height="50px" Width="125px"/>
-                              </td>
-                          </tr>
-                          <tr>
-                            <td class="catsubject"   >  
-                               Flat 20% Extra Off On Selected Top Brands
-                            </td>
-                          </tr>
-                          <tr><td>&nbsp;</td></tr>
-
-                          <tr>
-                              <td align="center" class="tablebottom">
-                                  <asp:ImageButton ID="ImageButton60" runat="server"  ImageUrl="~/Images/getoffer.png" />
-                              </td>
-                          </tr>
-                      </table>
-                  </td>
-
-                    <td  width="2%">
-                      &nbsp;
-                  </td>
-
-                   <td class="cattd">
-                       <table width="90%">
-                          <tr>
-                              <td align="center" class="tabletop">
-                                  <asp:Image runat="server" ID="Image22" ImageUrl="~/Images/fashionara.jpg" Height="50px" Width="125px"/>
-                              </td>
-                          </tr>
-                          <tr>
-                            <td class="catsubject"  >  
-                                Exclusive – Upto 70% + Extra 10% Off Across Site – No Min Purchase
-                            </td>
-                          </tr>
-                          <tr><td>&nbsp;</td></tr>
-
-                          <tr>
-                              <td align="center" class="tablebottom">
-                                    <asp:ImageButton ID="ImageButton61" runat="server"  ImageUrl="~/Images/getdeal.png" />
-                              </td>
-                          </tr>
-                      </table>
-                  </td>
-
-                   <td width="2%" >
-                      &nbsp;
-                  </td>
-
-                   <td class="cattd">
-                      <table width="90%">
-                          <tr>
-                              <td align="center" class="tabletop">
-                                  <asp:Image runat="server" ID="Image23" ImageUrl="~/Images/shoppersstop.jpg" Height="50px" Width="125px"/>
-                              </td>
-                          </tr>
-                          <tr>
-                            <td class="catsubject"   >  
-                                Flat 20% Off On Rs.4000 – Across Website
-                            </td>
-                          </tr>
-                          <tr><td>&nbsp;</td></tr>
-
-                          <tr>
-                              <td align="center" class="tablebottom">
-                                  <asp:ImageButton ID="ImageButton62" runat="server"  ImageUrl="~/Images/getoffer.png" />
-                              </td>
-                          </tr>
-                      </table>
-                  </td>
-
-                   <td  width="4%">
-                      &nbsp;
-                   </td>
-
-                              </tr>
-                          </table>
-                      </td>
-            
-              </tr>
+                
+                <tr>
+                                             <td>
+                                                 <table>
+                                                     <tr>
+                                                         <td>
+                                                                <asp:DataList ID="DataList1" runat="server" width="60%"  RepeatColumns="4"  OnItemDataBound="Item_Bound1" 
+                                                                 onitemcommand="DataList1_ItemCommand2" CellPadding="8" CellSpacing="0" Height="150px">
+                                                                 <ItemTemplate>
+                                       
+                                                                   <table width="80%"  align="center" class="cattd" >
+                                                                       <tr>
+                                                                          <td align="center" class="tabletop">
+                                                                              <asp:Image runat="server" ID="cimg2" ImageUrl='<%# Eval("imagepath") %>' Height="60px" Width="150px"/>
+                                                                          </td>
+                                                                      </tr>
+                                                                      <tr>
+                                                                          <td class="catsubject" align="center"  >  
+                                                                            <asp:Label ID="lbldesc1" runat="server" Text='<%# Eval("discription") %>'></asp:Label>
+                                                                         </td>
+                                                                      </tr>
+                                                                      <tr><td>&nbsp;</td></tr>
+                                                                      <tr>
+                                                                          <td align="center" class="tablebottom">
+                                                                              <asp:Button ID="dlbtn" runat="server"  Text='<%# Eval("catcode") %>' CssClass="btncursor" 
+                                                                                  CommandName="dlcoupon" CommandArgument='<%# Eval("id") %>'  />
+                                                                              <asp:Button ID="dlbtn1" runat="server"  Text='<%# Eval("code") %>' CssClass="btncursor" Visible="false" Enabled="false"  />
+                                                                          </td>
+                                                                      </tr>
+                                                                  </table>
+                                                                 </ItemTemplate>
+                                                              </asp:DataList>
+                                                          </td>
+                                             <asp:Label ID="lblnorecord" runat="server" ></asp:Label>
+                                     </tr>
+                                                 </table>
+                                             </td>
+                                         </tr>
 
                <tr>
                   <td>
