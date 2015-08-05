@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="ElectronicOffers.aspx.cs" Inherits="ElectronicOffers" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="ElectronicOffers.aspx.cs" Inherits="ElectronicOffers" MaintainScrollPositionOnPostback="true"%>
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="ajx" %>
 
 <%@ Register Src="Usercontrols/Top.ascx" TagName="Top" TagPrefix="topcontrol" %>
@@ -24,7 +24,7 @@
 
                     <tr>
                   <td align="center">
-                    <h2> <i> Electronics Offers </i></h2>
+                    <h2> <i> Mobiles &  Electronics Offers </i></h2>
                   </td>
               </tr>
 
@@ -56,6 +56,12 @@
                                                                               <asp:Button ID="dlbtn1" runat="server"  Text='<%# Eval("code") %>' CssClass="btncursor" Visible="false" Enabled="false"  />
                                                                           </td>
                                                                       </tr>
+                                                                       <tr>
+                                      <td>
+                                          <asp:TextBox  ID="txt1" runat="server"  Width="0px" BorderStyle="None" Height="0px"></asp:TextBox>
+
+                                      </td>
+                                  </tr>
                                                                   </table>
                                                                  </ItemTemplate>
                                                               </asp:DataList>

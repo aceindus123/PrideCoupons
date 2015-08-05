@@ -16,28 +16,35 @@ public partial class Admin_Admin_Homepage : System.Web.UI.Page
     {
         if (!IsPostBack)
         {
-            try
+            if (Session["Admin"].ToString() == null)
             {
-                code.Visible = false;
-                SqlDataAdapter da = new SqlDataAdapter("Select * from Category order by id asc", con);
-                DataSet ds = new DataSet();
-                da.Fill(ds);
-                ddcategory.DataTextField = "catagoryname";
-                ddcategory.DataSource = ds;
-                ddcategory.DataBind();
-                ddcategory.Items.Insert(0, "Select");
-
-                SqlDataAdapter da1 = new SqlDataAdapter("Select * from company order by id asc", con);
-                DataSet ds1 = new DataSet();
-                da1.Fill(ds1);
-                ddcompany.DataTextField = "name";
-                ddcompany.DataSource = ds1;
-                ddcompany.DataBind();
-                ddcompany.Items.Insert(0, "Select");
+                Response.Redirect("Default.aspx");
             }
-            catch (Exception ex)
+            else
             {
+                try
+                {
+                    code.Visible = false;
+                    SqlDataAdapter da = new SqlDataAdapter("Select * from Category order by id asc", con);
+                    DataSet ds = new DataSet();
+                    da.Fill(ds);
+                    ddcategory.DataTextField = "catagoryname";
+                    ddcategory.DataSource = ds;
+                    ddcategory.DataBind();
+                    ddcategory.Items.Insert(0, "Select");
 
+                    SqlDataAdapter da1 = new SqlDataAdapter("Select * from company order by id asc", con);
+                    DataSet ds1 = new DataSet();
+                    da1.Fill(ds1);
+                    ddcompany.DataTextField = "name";
+                    ddcompany.DataSource = ds1;
+                    ddcompany.DataBind();
+                    ddcompany.Items.Insert(0, "Select");
+                }
+                catch (Exception ex)
+                {
+
+                }
             }
         }
     }

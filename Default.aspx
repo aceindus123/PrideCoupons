@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="Default.aspx.cs" Inherits="Default" MaintainScrollPositionOnPostback="true" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="Default.aspx.cs" Inherits="Default" MaintainScrollPositionOnPostback="true" SmartNavigation="true" %>
 
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="ajx" %>
 <%@ Register Src="Usercontrols/Top.ascx" TagName="Top" TagPrefix="topcontrol" %>
@@ -9,7 +9,34 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head id="Head1" runat="server">
-    <title>: : Pride Coupons : :</title>
+ <title>Pride Coupon Shopping | Electronics | Fashion | Mobile Accessories   </title>
+<meta name="description" content="Shop online from a range of categories such as mobiles and gadgets, PC’s and laptops, clothing accessories, electronics, food and outing, Gifts at Pride Coupons" />
+<meta name="keywords" content="Coupon Codes,shopclues Coupons,Promo Codes,Electronics & Computers Coupons,shopping coupons, Promotion Codes,All coupons at one place, Latest coupons,online deals for Snapdeal, Flipkart, Jabong,snapdeal,paytm,amazon online coupons,Travel & Holidays,Kids, Babies & Toys,Shoes & Bags,Fashion & Accessories" />
+<meta name="googlebot" content="index, follow">
+<meta name="robots" content="index, follow">
+<meta name="rating" content="General" />
+<meta name="distribution" content="global" />
+<meta name="author" content="http://www.pridecoupons.com" />
+<meta name="google-site-verification" content="tDocEzL300R0S1CjohccLYf7Y2PWlBXOLNy_rg1yNf0" />
+<meta name="msvalidate.01" content="654CDD9EF1609D256B2A25552B6F947A" />
+<meta name="alexaVerifyID" content="ds3zIKUROb0jws_rFGMlQKUcNdM"/> 
+
+
+<script>
+    (function (i, s, o, g, r, a, m) {
+        i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+            (i[r].q = i[r].q || []).push(arguments)
+        }, i[r].l = 1 * new Date(); a = s.createElement(o),
+        m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+    ga('create', 'UA-65832231-1', 'auto');
+    ga('send', 'pageview');
+
+</script>
+
+
+
     <link href="Css/StyleSheet.css" rel="stylesheet" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 </head>
@@ -60,6 +87,12 @@
                                           <asp:Button ID="btn1" runat="server"  Text='<%# Eval("code") %>' CssClass="btncursor" Visible="false" Enabled="false"  />
                                       </td>
                                   </tr>
+                                  <tr>
+                                      <td>
+                                          <asp:TextBox  ID="txt" runat="server"  Width="0px" BorderStyle="None" Height="0px"></asp:TextBox>
+
+                                      </td>
+                                  </tr>
                               </table>
                                  <br />
                              </ItemTemplate>
@@ -95,7 +128,6 @@
                                                     <td height="35" align="left" valign="top" style="background:url(images/nav_line_strip.png); background-repeat:no-repeat;">
                                                           <strong><asp:LinkButton ID="linkfashions" Text="Fashions" CssClass="simple"
                                                                runat="server" OnClick="linkfashions_Click"  ></asp:LinkButton></strong>
-
                                                        </td>
                                               </tr>
                                
@@ -122,6 +154,13 @@
                                runat="server" OnClick="lnkfood_Click" ></asp:LinkButton></strong>
             </td>
                   </tr>          
+                                             <tr>
+                    <td height="35" align="left" valign="top" style="background:url(images/nav_line_strip.png); background-repeat:no-repeat;">
+                         <strong>
+                         <asp:LinkButton ID="LinkButton1" Text="Others" CssClass="simple"
+                               runat="server" OnClick="LinkButton1_Click"  ></asp:LinkButton></strong>
+            </td>
+                  </tr>          
                                          </table>
                                    </td>
 
@@ -144,25 +183,31 @@
                                                                  onitemcommand="DataList1_ItemCommand2" CellPadding="8" CellSpacing="0" Height="150px">
                                                                  <ItemTemplate>
                                        
-                                                                   <table width="80%"  align="center" class="cattd1" >
+                                                                   <table width="80%"  align="center" class="cattd1">
                                                                        <tr>
                                                                           <td align="center" class="tabletop">
                                                                               <asp:Image runat="server" ID="cimg2" ImageUrl='<%# Eval("imagepath") %>' Height="60px" Width="150px"/>
                                                                           </td>
                                                                       </tr>
                                                                       <tr>
-                                                                          <td class="catsubject" align="center"  >  
+                                                                          <td class="catsubject" align="center">  
                                                                             <asp:Label ID="lbldesc1" runat="server" Text='<%# Eval("discription") %>'></asp:Label>
                                                                          </td>
                                                                       </tr>
                                                                       <tr><td>&nbsp;</td></tr>
                                                                       <tr>
                                                                           <td align="center" class="tablebottom">
-                                                                              <asp:Button ID="dlbtn" runat="server"  Text='<%# Eval("catcode") %>' CssClass="btncursor" 
+                                                                              <asp:Button ID="dlbtn" runat="server"  Text='<%# Eval("catcode") %>' CssClass="btncursor"  on
                                                                                   CommandName="dlcoupon" CommandArgument='<%# Eval("id") %>'  />
                                                                               <asp:Button ID="dlbtn1" runat="server"  Text='<%# Eval("code") %>' CssClass="btncursor" Visible="false" Enabled="false"  />
                                                                           </td>
                                                                       </tr>
+                                                                       <tr>
+                                      <td>
+                                          <asp:TextBox  ID="txt1" runat="server"  Width="0px" BorderStyle="None" Height="0px"></asp:TextBox>
+
+                                      </td>
+                                  </tr>
                                                                   </table>
                                                                  </ItemTemplate>
                                                               </asp:DataList>
@@ -344,6 +389,38 @@
           </table>
 
     </div>
+
+    <script type = "text/javascript">
+        window.onload = function () {
+            var scrollY = parseInt('<%#Request.Form["scrollY"] %>');
+            if (!isNaN(scrollY)) {
+                window.scrollTo(0, scrollY);
+            }
+        };
+        window.onscroll = function () {
+            var scrollY = document.body.scrollTop;
+            if (scrollY == 0) {
+                if (window.pageYOffset) {
+                    scrollY = window.pageYOffset;
+                }
+                else {
+                    scrollY = (document.body.parentElement) ? document.body.parentElement.scrollTop : 0;
+                }
+            }
+            if (scrollY > 0) {
+                var input = document.getElementById("scrollY");
+                if (input == null) {
+                    input = document.createElement("input");
+                    input.setAttribute("type", "hidden");
+                    input.setAttribute("id", "scrollY");
+                    input.setAttribute("name", "scrollY");
+                    document.forms[0].appendChild(input);
+                }
+                input.value = scrollY;
+            }
+        };
+</script>
+
     </form>
 </body>
 </html>

@@ -19,7 +19,17 @@ public partial class Admin_UploadOffers : System.Web.UI.Page
 
     protected void Page_Load(object sender, EventArgs e)
     {
+        if (!IsPostBack)
+        {
+            if (Session["Admin"].ToString() == null)
+            {
+                Response.Redirect("Default.aspx");
+            }
+            else
+            {
 
+            }
+        }
     }
 
     protected void btnsubmit_Click(object sender, EventArgs e)
@@ -52,15 +62,24 @@ public partial class Admin_UploadOffers : System.Web.UI.Page
         {
             string cat1 = ds1.Tables[0].Rows[i]["category_name"].ToString();
             string cat = "";
-            if (cat1 == "TV Shop")
+            if (cat1 == "TV Shop" || cat1 == "Mobiles & Tablets" || cat1 == "Computers & Peripherals")
             {
                 cat = "Mobiles & Electronics";
+            }
+            else if (cat1 == "Automotive" || cat1 == "Automobiles")
+            {
+                cat = "Others";
+            }
+            else if (cat1 == "Men's Footwear" || cat1 == "Women's Ethnic Wear")
+            {
+                cat = "Fashions";
             }
             else
             {
                 cat = "Home & Furniture";
 
             }
+
             string subcat1 = ds1.Tables[0].Rows[i]["sub_category_name"].ToString();
             string subcat = "";
             if (cat1 == "TV Shop")
@@ -107,9 +126,6 @@ public partial class Admin_UploadOffers : System.Web.UI.Page
 
         }
     }
-
-
-
 
 
 
@@ -180,7 +196,23 @@ public partial class Admin_UploadOffers : System.Web.UI.Page
 
     protected void Button1_Click(object sender, EventArgs e)
     {
-
+        uploadfile.Attributes.Clear();
     }
 
+    protected void LinkButton1_Click(object sender, EventArgs e)
+    {
+        string date11 = DateTime.Now.ToString("MM/dd/yyyy");
+
+        string cmd2 = "select top(1) CONVERT(VARCHAR(10),posteddate,101) as date2 from coupons_cat  where  proiority=2 and company='snapdeal'  order by posteddate asc";
+        SqlDataAdapter sda = new SqlDataAdapter(cmd2, con);
+        DataSet ds1 = new DataSet();
+        sda.Fill(ds1);
+
+        string cmd3 = "select CONVERT(VARCHAR(10),posteddate,101) as date1,* from coupons_cat  where proiority=2 and company='snapdeal'and  posteddate between '"+ds1.Tables[0].Rows[0]["date2"].ToString()+"' and '"+date11+"' order by posteddate asc";
+        SqlDataAdapter sda1 = new SqlDataAdapter(cmd3, con);
+        DataSet ds2 = new DataSet();
+        sda1.Fill(ds2);
+
+
+    }
 }

@@ -19,6 +19,29 @@
     <div align="center" width="60%">
          <table  width="60%"  >
              <tr>
+                 <td align="center" colspan="3" >
+                               
+
+                     <asp:LinkButton ID="lnkhome" runat="server" PostBackUrl="~/Admin/Admin-Homepage.aspx" Text="Home" Font-Underline="false" Font-Size="18px" ></asp:LinkButton>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+                      <asp:LinkButton ID="lnkadd" runat="server" PostBackUrl="~/Admin/Add.aspx" Text="Add Items" Font-Underline="false" Font-Size="18px"></asp:LinkButton>
+                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  
+
+                     <asp:LinkButton ID="lnkoffers" runat="server" PostBackUrl="~/Admin/UploadOffers.aspx" Text="Snapdeal Offers" Font-Underline="false" Font-Size="18px"></asp:LinkButton>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+               
+                     <asp:LinkButton ID="lnkflip" runat="server" PostBackUrl="~/Admin/Uploadflip.aspx" Text="Flipkart Catagories" Font-Underline="false" Font-Size="18px"></asp:LinkButton>
+       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;             
+                     <asp:LinkButton ID="lnkflip1" runat="server" PostBackUrl="~/Admin/Uploadflip1.aspx" Text="Flipkart Offers" Font-Underline="false" Font-Size="18px"></asp:LinkButton>
+
+                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;             
+                     <asp:LinkButton ID="lnkamazon" runat="server" PostBackUrl="~/Admin/Amazonoffers.aspx" Text="Amazon Offers" Font-Underline="false" Font-Size="18px"></asp:LinkButton>
+                 </td>
+             </tr>
+             <tr><td>  <br /></td></tr>
+
+             <tr>
                  <td colspan="3" align="center">
                       <h2>
                             Upload Promo Code
@@ -26,13 +49,6 @@
                  </td>
              </tr>
              <tr><td>  <br /></td></tr>
-             <tr>
-                 <td>
-                     <asp:LinkButton ID="lnkhome" runat="server" PostBackUrl="~/Admin/Admin-Homepage.aspx" Text="Home"></asp:LinkButton>
-                     <asp:LinkButton ID="lnkoffers" runat="server" PostBackUrl="~/Admin/UploadOffers.aspx" Text="Offers"></asp:LinkButton>
-
-                 </td>
-             </tr>
              <tr>
                  <td  align="right" class="upload">
                      <asp:Label ID="lbl1" runat="server" Text="Select Category"></asp:Label>

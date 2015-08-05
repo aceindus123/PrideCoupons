@@ -29,6 +29,7 @@ public partial class ElectronicOffers : System.Web.UI.Page
 
                     ds = bind(Convert.ToInt32(Request.QueryString["tag"]));
                     string s = ds.Tables[0].Rows[0]["tag"].ToString();
+                    TextBox txt = null;
 
                     for (int i = 0; i < ds1.Tables[0].Rows.Count; i++)
                     {
@@ -40,6 +41,7 @@ public partial class ElectronicOffers : System.Web.UI.Page
                             btn1.Visible = false;
                             Button btn2 = (Button)DataList1.Items[i].FindControl("dlbtn1");
                             btn2.Visible = true;
+                            txt = (TextBox)DataList1.Items[i].FindControl("txt1");
                             string code = ds.Tables[0].Rows[0]["catoffer"].ToString();
                             if (code == "YES")
                             {
@@ -56,7 +58,8 @@ public partial class ElectronicOffers : System.Web.UI.Page
                         }
                     }
 
-                    Response.Write("<script type='text/javascript'> window.open('" + s + "','_blank'); </script>");
+                    Response.Write("<script type='text/javascript'> window.open('" + s + "','_blank',false); </script>");
+                    txt.Focus();
                 }
             }
         }

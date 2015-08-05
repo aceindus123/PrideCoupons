@@ -65,7 +65,7 @@ public partial class FashionOffers : System.Web.UI.Page
 
     public DataSet bind()
     {
-        SqlDataAdapter da = new SqlDataAdapter("select * from coupons_cat where catagory='Fashion' order by id desc", con);
+        SqlDataAdapter da = new SqlDataAdapter("select * from coupons_cat where catagory='Fashions' order by id desc", con);
         DataSet ds = new DataSet();
         da.Fill(ds);
         return ds;

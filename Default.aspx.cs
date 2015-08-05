@@ -19,6 +19,7 @@ public partial class Default : System.Web.UI.Page
     {
         if (!IsPostBack)
         {
+          
             DataSet ds1 = new DataSet();
             DataSet ds2 = new DataSet();
             ds1 = bind();
@@ -34,10 +35,13 @@ public partial class Default : System.Web.UI.Page
 
                 DataList1.DataSource = ds2;
                 DataList1.DataBind();
+                
+             
 
                 if (Convert.ToString(Request.QueryString["tag"]) != null && Request.QueryString["tag"].ToString() != "")
                 {
-
+                    Button btn1 = null;
+                    TextBox txt = null;
                     ds = bind(Convert.ToInt32(Request.QueryString["tag"]));
                     string s = ds.Tables[0].Rows[0]["tag"].ToString();
 
@@ -47,11 +51,13 @@ public partial class Default : System.Web.UI.Page
                         int a = Convert.ToInt32(ds1.Tables[0].Rows[i]["id"].ToString());
                         if (a == s1)
                         {
-                            Button btn1 = (Button)ddtop.Items[i].FindControl("btn");
+                            btn1 = (Button)ddtop.Items[i].FindControl("btn");
+                            txt = (TextBox)ddtop.Items[i].FindControl("txt");
                             btn1.Visible = false;
                             Button btn2 = (Button)ddtop.Items[i].FindControl("btn1");
                             btn2.Visible = true;
                             string code = ds.Tables[0].Rows[0]["catoffer"].ToString();
+
                             if (code == "YES")
                             {
                                 btn2.Text = "Deal Activated";
@@ -62,12 +68,12 @@ public partial class Default : System.Web.UI.Page
                                 string code1 = ds.Tables[0].Rows[0]["code"].ToString();
                                 btn2.Visible = true;
                                 btn2.CssClass = "btncursor3";
-
                             }
                         }
                     }
 
-                    Response.Write("<script type='text/javascript'> window.open('" + s + "','_blank'); </script>");
+                    Response.Write("<script type='text/javascript'> window.open('" + s + "','_blank',false); </script>");
+                    txt.Focus();
                 }
 
                 if (Convert.ToString(Request.QueryString["tag1"]) != null && Request.QueryString["tag1"].ToString() != "")
@@ -76,9 +82,10 @@ public partial class Default : System.Web.UI.Page
                     string s = ds.Tables[0].Rows[0]["tag"].ToString();
 
                     sample = ds.Tables[0].Rows[0]["catagory"].ToString();
-                    DataSet   ds3 = bind1(sample);
+                    DataSet ds3 = bind1(sample);
                     DataList1.DataSource = ds3;
                     DataList1.DataBind();
+                    TextBox txt1 = null;
                     lbltitle.Text = Convert.ToString(Request.QueryString["title"]);
                     if (lbltitle.Text == "Home ")
                     {
@@ -92,8 +99,8 @@ public partial class Default : System.Web.UI.Page
                     if (lbltitle.Text == "Mobiles ")
                     {
                         lbltitle.Text = "Mobiles & Electronics Offers";
-
                     }
+                    Button btn1 = null;
                     for (int i = 0; i < ds3.Tables[0].Rows.Count; i++)
                     {
                         int s1 = Convert.ToInt32(ds.Tables[0].Rows[0]["id"].ToString());
@@ -101,10 +108,11 @@ public partial class Default : System.Web.UI.Page
 
                         if (a == s1)
                         {
-                            Button btn1 = (Button)DataList1.Items[i].FindControl("dlbtn");
+                            btn1 = (Button)DataList1.Items[i].FindControl("dlbtn");
                             btn1.Visible = false;
                             Button btn2 = (Button)DataList1.Items[i].FindControl("dlbtn1");
                             btn2.Visible = true;
+                            txt1 = (TextBox)DataList1.Items[i].FindControl("txt1");
                             string code = ds.Tables[0].Rows[0]["catoffer"].ToString();
                             if (code == "YES")
                             {
@@ -117,13 +125,13 @@ public partial class Default : System.Web.UI.Page
                                 string code1 = ds.Tables[0].Rows[0]["code"].ToString();
                                 btn2.Visible = true;
                                 btn2.CssClass = "btncursor3";
-
                             }
-                        
                         }
                     }
 
-                    Response.Write("<script type='text/javascript'> window.open('" + s + "','_blank'); </script>");
+
+                    Response.Write("<script type='text/javascript'> window.open('" + s + "','_blank',false); </script>");
+                    txt1.Focus();
                 }
             }
         }
@@ -325,6 +333,29 @@ public partial class Default : System.Web.UI.Page
         }
     }
 
+    protected void LinkButton1_Click(object sender, EventArgs e)
+    {
+        lblnorecord.Visible = false;
+
+        lbltitle.Visible = true;
+        lbltitle.Text = "Other Offers";
+
+        sample = "Others";
+        ds = bind1(sample);
+        if (ds.Tables[0].Rows.Count > 0)
+        {
+            DataList1.DataSource = ds;
+            DataList1.DataBind();
+        }
+        else
+        {
+            lblnorecord.Text = "No Coupons Found";
+            lblnorecord.Visible = true;
+            DataList1.Visible = false;
+
+        }
+    }
+
     protected void lnkmore_Click(object sender, EventArgs e)
     {
         if (lbltitle.Text == "Mobiles & Electronics Offers")
@@ -347,6 +378,11 @@ public partial class Default : System.Web.UI.Page
         {
             Response.Redirect("FoodOffers.aspx");
         }
+        else if (lbltitle.Text == "Other Offers")
+        {
+            Response.Redirect("OthersOffers.aspx");
+        }
+
 
     }
 
@@ -410,4 +446,11 @@ public partial class Default : System.Web.UI.Page
     {
         Response.Redirect("http://www.futuregroup.in/");
     }
+    // http://dl.flipkart.com/dl/?affid=vyarramse
+    // http://www.flipkart.com/
+
+
+    // alexa 8,697,033()
+   
 }
+
