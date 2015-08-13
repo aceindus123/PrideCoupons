@@ -8,7 +8,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-public partial class TravelOffers : System.Web.UI.Page
+public partial class Default2 : System.Web.UI.Page
 {
     SqlConnection con = new SqlConnection(ConfigurationManager.AppSettings["ConnectionString"]);
     DataSet ds = new DataSet();
@@ -19,7 +19,7 @@ public partial class TravelOffers : System.Web.UI.Page
     {
         if (!IsPostBack)
         {
-            
+
             DataSet ds1 = new DataSet();
             DataSet ds2 = new DataSet();
             ds1 = bind();
@@ -133,7 +133,6 @@ public partial class TravelOffers : System.Web.UI.Page
 
                     Response.Write("<script type='text/javascript'> window.open('" + s + "','_blank',false); </script>");
                     txt1.Focus();
-                    //   Focus = "txt1";
                 }
             }
         }
@@ -219,15 +218,175 @@ public partial class TravelOffers : System.Web.UI.Page
 
     public DataSet bind1(string s)
     {
-        SqlDataAdapter da = new SqlDataAdapter("select * from coupons_cat where catagory='" + s + "' order by id desc", con);
+        SqlDataAdapter da = new SqlDataAdapter("select top(3)* from coupons_cat where catagory='" + s + "' order by id desc", con);
         DataSet ds = new DataSet();
         da.Fill(ds);
         return ds;
     }
 
 
+    protected void linkmobiles_Click(object sender, EventArgs e)
+    {
+        lblnorecord.Visible = false;
+        lbltitle.Visible = true;
+        lbltitle.Text = "Mobiles & Electronics Offers";
+
+        sample = "Mobiles & Electronics";
+
+        ds = bind1(sample);
+        if (ds.Tables[0].Rows.Count > 0)
+        {
+            DataList1.DataSource = ds;
+            DataList1.DataBind();
+        }
+        else
+        {
+            lblnorecord.Text = "No Coupons Found";
+            lblnorecord.Visible = true;
+            DataList1.Visible = false;
+        }
+    }
+
+    protected void linkfashions_Click(object sender, EventArgs e)
+    {
+        lblnorecord.Visible = false;
+
+        lbltitle.Visible = true;
+        lbltitle.Text = "Fashion Offers";
+
+        sample = "Fashions";
+        ds = bind1(sample);
+        if (ds.Tables[0].Rows.Count > 0)
+        {
+            DataList1.DataSource = ds;
+            DataList1.DataBind();
+        }
+        else
+        {
+            lblnorecord.Text = "No Coupons Found";
+            lblnorecord.Visible = true;
+            DataList1.Visible = false;
+
+        }
+    }
+
+    protected void lnktravels_Click(object sender, EventArgs e)
+    {
+        lblnorecord.Visible = false;
+
+        lbltitle.Visible = true;
+        lbltitle.Text = "Travels & Hotels Offers";
+        sample = "Travels & Hotels";
+        ds = bind1(sample);
+        if (ds.Tables[0].Rows.Count > 0)
+        {
+            DataList1.DataSource = ds;
+            DataList1.DataBind();
+        }
+        else
+        {
+            lblnorecord.Text = "No Coupons Found";
+            lblnorecord.Visible = true;
+            DataList1.Visible = false;
+
+        }
+    }
+
+    protected void linkkitchen_Click(object sender, EventArgs e)
+    {
+        lblnorecord.Visible = false;
+
+        lbltitle.Visible = true;
+        lbltitle.Text = "Home & Furniture Offers";
+        sample = "Home & Furniture";
+        ds = bind1(sample);
+        if (ds.Tables[0].Rows.Count > 0)
+        {
+            DataList1.DataSource = ds;
+            DataList1.DataBind();
+        }
+        else
+        {
+            lblnorecord.Text = "No Coupons Found";
+            lblnorecord.Visible = true;
+            DataList1.Visible = false;
+        }
+    }
+
+    protected void lnkfood_Click(object sender, EventArgs e)
+    {
+        lblnorecord.Visible = false;
+
+        lbltitle.Visible = true;
+        lbltitle.Text = "Food Items Offers";
+        sample = "Food Items";
+        ds = bind1(sample);
+        if (ds.Tables[0].Rows.Count > 0)
+        {
+            DataList1.DataSource = ds;
+            DataList1.DataBind();
+        }
+        else
+        {
+            lblnorecord.Text = "No Coupons Found";
+            lblnorecord.Visible = true;
+            DataList1.Visible = false;
+
+        }
+    }
+
+    protected void LinkButton1_Click(object sender, EventArgs e)
+    {
+        lblnorecord.Visible = false;
+
+        lbltitle.Visible = true;
+        lbltitle.Text = "Other Offers";
+
+        sample = "Others";
+        ds = bind1(sample);
+        if (ds.Tables[0].Rows.Count > 0)
+        {
+            DataList1.DataSource = ds;
+            DataList1.DataBind();
+        }
+        else
+        {
+            lblnorecord.Text = "No Coupons Found";
+            lblnorecord.Visible = true;
+            DataList1.Visible = false;
+
+        }
+    }
+
+    protected void lnkmore_Click(object sender, EventArgs e)
+    {
+        if (lbltitle.Text == "Mobiles & Electronics Offers")
+        {
+            Response.Redirect("ElectronicOffers.aspx");
+        }
+        else if (lbltitle.Text == "Fashion Offers")
+        {
+            Response.Redirect("FashionOffers.aspx");
+        }
+        else if (lbltitle.Text == "Travels & Hotels Offers")
+        {
+            Response.Redirect("TravelOffers.aspx");
+        }
+        else if (lbltitle.Text == "Home & Furniture Offers")
+        {
+            Response.Redirect("KitchenOffers.aspx");
+        }
+        else if (lbltitle.Text == "Food Items Offers")
+        {
+            Response.Redirect("FoodOffers.aspx");
+        }
+        else if (lbltitle.Text == "Other Offers")
+        {
+            Response.Redirect("OthersOffers.aspx");
+        }
 
 
+    }
 
     protected void LinkButton14_Click(object sender, EventArgs e)
     {
@@ -327,31 +486,6 @@ public partial class TravelOffers : System.Web.UI.Page
     {
         Response.Redirect("http://www.shopclues.com/fashion.html");
     }
-
-
-    // alexa 8,697,033()
-    [System.Web.Script.Services.ScriptMethod()]
-    [System.Web.Services.WebMethod]
-    public static List<string> GetCompletionList(string prefixText)
-    {
-        DataTable dt = new DataTable();
-        string constr = ConfigurationManager.AppSettings["ConnectionString"].ToString();
-        SqlConnection con = new SqlConnection(constr);
-        con.Open();
-        SqlCommand cmd = new SqlCommand("select * from coupons_cat where discription like @City+'%'", con);
-        cmd.Parameters.AddWithValue("@City", prefixText);
-        SqlDataAdapter adp = new SqlDataAdapter(cmd);
-        adp.Fill(dt);
-        List<string> CityNames = new List<string>();
-        for (int i = 0; i < dt.Rows.Count; i++)
-        {
-            CityNames.Add(dt.Rows[i][3].ToString());
-        }
-
-        return CityNames;
-    }
-
-
     protected void serchimgbtn_Click(object sender, ImageClickEventArgs e)
     {
         if (txtserch.Text != "")
@@ -366,65 +500,5 @@ public partial class TravelOffers : System.Web.UI.Page
         }
 
     }
-    protected void lnkshop_Click(object sender, EventArgs e)
-    {
-        Response.Redirect("ElectronicOffers.aspx");
-    }
-    protected void lnkshop1_Click(object sender, EventArgs e)
-    {
-        Response.Redirect("FashionOffers.aspx");
-    }
-    protected void lnkshop2_Click(object sender, EventArgs e)
-    {
-        Response.Redirect("KitchenOffers.aspx");
-    }
-    protected void lnkshop3_Click(object sender, EventArgs e)
-    {
-        Response.Redirect("OthersOffers.aspx");
-    }
-    protected void lnktravel3_Click(object sender, EventArgs e)
-    {
-        //Response.Redirect("https://www.redbus.in/");
-        // Response.Redirect("javascript:window.location.href='https://www.redbus.in/'");
-        // string strScript = "location.replace('https://www.redbus.in/');";
-        //Page.ClientScript.RegisterStartupScript(this.GetType(), "alertBox", strScript, true);
-
-        Response.Write("<script type='text/javascript'> window.open('https://www.redbus.in','_blank',false); </script>");
-
-    }
-    protected void lnktravel2_Click(object sender, EventArgs e)
-    {
-        //  Response.Redirect("http://www.industravels.com/");
-        Response.Write("<script type='text/javascript'> window.open('http://www.industravels.com/','_blank',false); </script>");
-
-    }
-    protected void lnktravel1_Click(object sender, EventArgs e)
-    {
-        // Response.Redirect("http://www.industravels.com/");
-        Response.Write("<script type='text/javascript'> window.open('http://www.industravels.com/','_blank',false); </script>");
-
-    }
-
-    protected void lnktravel_Click(object sender, EventArgs e)
-    {
-        // Response.Redirect("http://www.industravels.com/");
-        Response.Write("<script type='text/javascript'> window.open('http://www.industravels.com/','_blank',false); </script>");
-
-    }
-
-    protected void lnkall_Click(object sender, EventArgs e)
-    {
-      //  top1.Focus();
-    }
-
-    protected void lnktop_Click(object sender, EventArgs e)
-    {
-        top.Visible = true;
-        top1.Visible = false;
-
-    }
-    protected void lnkfood1_Click(object sender, EventArgs e)
-    {
-        Response.Write("FoodOffers.aspx");
-    }
 }
+

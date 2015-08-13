@@ -1,6 +1,5 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="Default.aspx.cs" Inherits="Default" MaintainScrollPositionOnPostback="true" %>
-
-<%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="ajx" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="Default2.aspx.cs" Inherits="Default2" %>
+ <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="ajx" %>
 <%@ Register Src="Usercontrols/Top.ascx" TagName="Top" TagPrefix="topcontrol" %>
 <%@ Register Src="Usercontrols/Bottom.ascx" TagName="Top" TagPrefix="bottomcontrol" %>
 
@@ -116,19 +115,13 @@
   /*background-color: #BDBDBD;*/
     background-color: #9FC5D7;
      height:46px;
-     width:300px;
+     width:600px;
     
 }
       .auto-style2 {
           width: 63%;
       }
     </style>
-
-   <%-- <script language="javascript">
-        document.all["<%= Focus %>"].focus();
-        if ("<%= ControlType %>" == "TextArea")
-            document.all["<%= Focus %>"].select();
-		</script>--%>
 
 
     </head>
@@ -141,12 +134,13 @@
         <ajx:ToolkitScriptManager ID="tv" runat="server"></ajx:ToolkitScriptManager>
 
     <table width="100%" align="center" class="bg1">
-        <tr>
+   
+              <tr>
                   <td width="98%"  align="center"  colspan="3">
                       <table width="100%" background="images/Logo.png" style="background-image:url(images/Logo.png); background-repeat:no-repeat;">
                           <tr>
                               <td width="40%">
-                                 &nbsp;
+                                 &nbsp;<%--<asp:ImageButton ID="homelogobtn" runat="server" ImageUrl="~/Images/Logo.png" PostBackUrl="~/Default.aspx" />--%>
                               </td>
                               <td align="center" width="40%" >
                                   <asp:ImageButton ID="ImageButton77" runat="server" ImageUrl="~/Images/bnner.gif" PostBackUrl="~/Default.aspx" Width="800px" Height="100px" />
@@ -155,66 +149,44 @@
                       </table>
                   </td>
                   <td widtth="2%">&nbsp;</td>
+
+                 
               </tr>
 
-
-            <tr class="menustyle"  >
-                  <td style="width:60%;" >
+              <tr class="menustyle"  >
+                  <td style="width:600px;">
                                    <ul class="myMenu">
                   	                                      <li><a href="#">Shopping</a>
                                                        <ul>
-        	                                                <li><%--<a href="ElectronicOffers.aspx">Electronics</a> --%>
-                                                                <asp:LinkButton ID="lnkshop" runat="server" Text="Electronics" OnClick="lnkshop_Click"></asp:LinkButton>
-        	                                                </li>
-                                                            <li><%--<a href="FashionOffers.aspx">Fashions</a>--%>
-                                                                <asp:LinkButton ID="lnkshop1" runat="server" Text="Fashions" OnClick="lnkshop1_Click"></asp:LinkButton>
-                                                            </li>
-                                                            <li><%--<a href="KitchenOffers.aspx">Home & Kitchen</a>--%>
-                                                                <asp:LinkButton ID="lnkshop2" runat="server" Text="Home & Kitchen" OnClick="lnkshop2_Click"></asp:LinkButton>
-                                                            </li>
-                                                            <li><%--<a href="OthersOffers.aspx">Other Categories</a>--%>
-                                                                <asp:LinkButton ID="lnkshop3" runat="server" Text="Other Categories" OnClick="lnkshop3_Click"></asp:LinkButton>
-                                                            </li>
+        	                                                <li><a href="#">Electronics</a> </li>
+                                                            <li><a href="#">Fashions</a></li>
+                                                            <li><a href="#">Home & Kitchen</a></li>
+                                                            <li><a href="#">Other Categories</a></li>
                                                         </ul>
                                          	</li>
                                         <li><a href="#">Travel </a>
     	                                    <ul>
-        	                                    <li><%--<a href="#">Domestic Flights</a>--%>
-                                                    <asp:LinkButton ID="lnktravel" runat="server" Text="Domestic Flights" OnClick="lnktravel_Click" ></asp:LinkButton>
-        	                                    </li>
-                                                <li><%--<a href="#">International Flights</a>--%>
-                                                       <asp:LinkButton ID="lnktravel1" runat="server" Text="International Flights" OnClick="lnktravel1_Click"></asp:LinkButton>
-                                                </li>
-                                                <li><%--<a href="#">Hotel Booking</a>--%>
-                                                       <asp:LinkButton ID="lnktravel2" runat="server" Text="Hotel Booking" OnClick="lnktravel2_Click"></asp:LinkButton>
-                                                </li>
-                                                <li><%--<a href="#">Bus Tickets</a>--%>
-                                                       <asp:LinkButton ID="lnktravel3" runat="server" Text="Bus Tickets" OnClick="lnktravel3_Click"></asp:LinkButton>
-                                                </li>
+        	                                    <li><a href="#">Domestic Flights</a></li>
+                                                <li><a href="#">International Flights</a></li>
+                                                <li><a href="#">Hotel Booking</a></li>
+                                                <li><a href="#">Bus Tickets</a></li>
                                             </ul>
                                         </li>
-                                       <%--     <li><a href="#">Bank</a>
+                                            <li><a href="#">Bank</a>
                                                <ul>
         	                                        <li><a href="#">Sbi Card Offers</a></li>
                                                     <li><a href="#">Icici Card Offers</a></li>
                                                     <li><a href="#">Hdfc Card Offers</a></li>
                                                     <li><a href="#">Axis Card Offers</a></li>
                                                 </ul>
-                                            </li>--%>
-                                             <li><%--<a href="#">Food</a>--%>
-                                                 <asp:LinkButton ID="lnkfood1" runat="server" Text="Food Deals" OnClick="lnkfood1_Click"></asp:LinkButton>
-                                             </li>
-                                             <li><%--<a href="#">Top Deals</a>--%>
-                                                 <asp:LinkButton ID="lnktop" runat="server" Text="Top Deals" OnClick="lnktop_Click"></asp:LinkButton>
-                                             </li>
-                                             <li><%--<a href="#">All Stores</a>--%>
-                                                 <asp:LinkButton ID="lnkall" runat="server" Text="All Stores" OnClick="lnkall_Click" ></asp:LinkButton>
-                                             </li>
+                                            </li>
+                                             <li><a href="#">Food</a></li>
+                                             <li><a href="#">Top Deals</a></li>
+                                             <li><a href="#">All Stores</a></li>
 
                                       </ul>
                   </td>
-
-                  <td  width="40%"  >
+                  <td  width="40%" align="left" colspan="2"  >
                       <table width="100%">
                           <tr>
                               <td>
@@ -233,13 +205,19 @@
 
                               </td>
                           </tr>
+
+                   <%--     <tr ID="listbox" runat="server" visible="false">
+                          <td>
+                               <asp:ListBox ID="list" runat="server" AppendDataBoundItems="true" AutoPostBack="true"></asp:ListBox>
+                        </td>
+                        </tr>--%>
                       </table>
                   </td>
-            </tr> 
+              </tr> 
+                         <tr>
+                              <td colspan="2" align="center" >
 
-            <tr>
-                  <td  align="center" width="100%" colspan="2" >
-                       <ajx:TabContainer ID="TabContainer1" runat="server" CssClass="fancy fancy-green" ActiveTabIndex="0">
+                                  <ajx:TabContainer ID="TabContainer1" runat="server" CssClass="fancy fancy-green" ActiveTabIndex="0">
 
                                           <ajx:TabPanel ID="TabPanel3" runat="server" >
                                             <HeaderTemplate>
@@ -273,7 +251,7 @@
                                                              <asp:ImageButton ID="ImageButton1" runat="server" ImageUrl="~/Images/amazon.jpg" Height="50px" Width="125px" />&nbsp;&nbsp;
                                                              <asp:ImageButton ID="ImageButton2" runat="server" ImageUrl="~/Images/ebay.jpg"  Height="50px" Width="125px"/>&nbsp;&nbsp;
                                                              <asp:ImageButton ID="ImageButton3" runat="server" ImageUrl="~/Images/snapdeal.jpg"  Height="50px" Width="125px"/>&nbsp;&nbsp;
-                                                             <asp:ImageButton ID="ImageButton4" runat="server" ImageUrl="~/Images/shopclues.jpg"  Height="50px" Width="125px"  />&nbsp;&nbsp;<%-- OnClick="ImageButton4_Click"  OnClientClick="form1.target ='_blank';"--%>
+                                                             <asp:ImageButton ID="ImageButton4" runat="server" ImageUrl="~/Images/shopclues.jpg"  Height="50px" Width="125px" OnClick="ImageButton4_Click"  OnClientClick="form1.target ='_blank';" />&nbsp;&nbsp;
                                                              <asp:ImageButton ID="ImageButton5" runat="server" ImageUrl="~/Images/indiatimesshopping.jpg"  Height="50px" Width="125px"/>&nbsp;&nbsp;
                                                              <asp:ImageButton ID="ImageButton6" runat="server" ImageUrl="~/Images/jabong.jpg"  Height="50px" Width="125px"/>&nbsp;&nbsp;
                                                              <asp:ImageButton ID="ImageButton7" runat="server" ImageUrl="~/Images/yatra.jpg"  Height="50px" Width="125px"/>&nbsp;&nbsp;
@@ -299,7 +277,7 @@
                                                              <asp:ImageButton ID="ImageButton10" runat="server" ImageUrl="~/Images/snapdeal.jpg"  Height="50px" Width="125px"/>&nbsp;&nbsp;
                                                              <asp:ImageButton ID="ImageButton11" runat="server" ImageUrl="~/Images/infibeam.jpg"  Height="50px" Width="125px"/>&nbsp;&nbsp;
                                                              <asp:ImageButton ID="ImageButton12" runat="server" ImageUrl="~/Images/jabong.jpg"  Height="50px" Width="125px"/>&nbsp;&nbsp;
-                                                             <asp:ImageButton ID="ImageButton13" runat="server" ImageUrl="~/Images/shopclues.jpg"  Height="50px" Width="125px" />&nbsp;&nbsp;<%--OnClick="ImageButton13_Click"  OnClientClick="form1.target ='_blank';--%>
+                                                             <asp:ImageButton ID="ImageButton13" runat="server" ImageUrl="~/Images/shopclues.jpg"  Height="50px" Width="125px" OnClick="ImageButton13_Click"  OnClientClick="form1.target ='_blank';"/>&nbsp;&nbsp;
                                                              <asp:ImageButton ID="ImageButton14" runat="server" ImageUrl="~/Images/ebay.jpg"  Height="50px" Width="125px"/>&nbsp;&nbsp;
                                                              <asp:ImageButton ID="ImageButton15" runat="server" ImageUrl="~/Images/indiatimesshopping.jpg"  Height="50px" Width="125px"/>&nbsp;&nbsp;
                                                          </td>
@@ -322,7 +300,7 @@
                                                              <asp:ImageButton ID="ImageButton16" runat="server" ImageUrl="~/Images/indiatimesshopping.jpg" Height="50px" Width="125px" />&nbsp;&nbsp;
                                                              <asp:ImageButton ID="ImageButton17" runat="server" ImageUrl="~/Images/yepme.jpg" Height="50px" Width="125px" />&nbsp;&nbsp;
                                                              <asp:ImageButton ID="ImageButton18" runat="server" ImageUrl="~/Images/fashionara.jpg"  Height="50px" Width="125px"/>&nbsp;&nbsp;
-                                                             <asp:ImageButton ID="ImageButton19" runat="server" ImageUrl="~/Images/shopclues.jpg"  Height="50px" Width="125px" />&nbsp;&nbsp; <%--OnClick="ImageButton19_Click"  OnClientClick="form1.target ='_blank';"--%>
+                                                             <asp:ImageButton ID="ImageButton19" runat="server" ImageUrl="~/Images/shopclues.jpg"  Height="50px" Width="125px" OnClick="ImageButton19_Click"  OnClientClick="form1.target ='_blank';"/>&nbsp;&nbsp;
                                                              <asp:ImageButton ID="ImageButton20" runat="server" ImageUrl="~/Images/jabong.jpg"  Height="50px" Width="125px"/>&nbsp;&nbsp;
                                                              <asp:ImageButton ID="ImageButton21" runat="server" ImageUrl="~/Images/amazon.jpg"  Height="50px" Width="125px"/>&nbsp;&nbsp;
                                                              <asp:ImageButton ID="ImageButton22" runat="server" ImageUrl="~/Images/flipkart.jpg"  Height="50px" Width="125px"/>&nbsp;&nbsp;
@@ -385,16 +363,16 @@
                                             </ajx:TabPanel>
 
                                  </ajx:TabContainer>
-                   </td>
-            </tr>
+                              </td>
+                          </tr>
 
-          <tr >
+              <tr >
                       <td align="center" colspan="2" class="h2head">
                          <h4> Hot Coupons & Offers Of The Day</h4>
                       </td>
               </tr>
 
-               <tr >
+              <tr  >
                      <td align="center" colspan="2">
                          <asp:DataList ID="ddtop" runat="server" width="100%"  RepeatColumns="4"  OnItemDataBound="Item_Bound" 
                              onitemcommand="DataList1_ItemCommand1" CellPadding="1" CellSpacing="0" Height="300px">
@@ -419,9 +397,10 @@
                                           <asp:Button ID="btn1" runat="server"  Text='<%# Eval("code") %>' CssClass="btncursor" Visible="false" Enabled="false"  />
                                       </td>
                                   </tr>
-                                   <tr>
+                                  <tr>
                                       <td>
-                                          <asp:TextBox  ID="txt" runat="server"  Width="0px" BorderStyle="None" Height="0px" AutoPostBack="true"></asp:TextBox>
+                                          <asp:TextBox  ID="txt" runat="server"  Width="0px" BorderStyle="None" Height="0px"></asp:TextBox>
+
                                       </td>
                                   </tr>
                               </table>
@@ -437,8 +416,8 @@
                       </td>
                 </tr>
 
-              <tr  id="top" runat="server" >
-                 <td  align="center" colspan="2" >
+              <tr>
+              <td  align="center" class="auto-style2" >
                        <table width="90%"  align="center" style="border:2px solid #61380B;">
                                  <tr>
 
@@ -535,7 +514,7 @@
                                                                       </tr>
                                                                        <tr>
                                       <td>
-                                          <asp:TextBox  ID="txt1" runat="server"  Width="0px" BorderStyle="None" Height="0px" AutoPostBack="true"></asp:TextBox>
+                                          <asp:TextBox  ID="txt1" runat="server"  Width="0px" BorderStyle="None" Height="0px"></asp:TextBox>
 
                                       </td>
                                   </tr>
@@ -558,7 +537,7 @@
                                 </tr>
                          </table>
                   </td>
-            </tr>
+           </tr>
 
               <tr>
                           <td class="auto-style2">
@@ -566,8 +545,8 @@
                           </td>
                       </tr>
 
-                <tr  id="top1" runat="server" >
-                  <td colspan="2" >
+                   <tr>
+                  <td class="auto-style2" >
                          <table width="100%">
                           <tr> <td  width="2%">
                       &nbsp;
@@ -675,7 +654,7 @@
               </tr>
 
               <tr>
-                  <td colspan="2" >
+                  <td class="auto-style2" >
                       <table width="100%">
                           <tr> <td  width="2%">
                       &nbsp;
@@ -712,12 +691,46 @@
               </tr>
 
               <tr>
-                  <td colspan="2">
+                  <td class="auto-style2">
                       <bottomcontrol:Top ID="bottom" runat="server" />
                   </td>
               </tr>
-        </table>
+
+          </table>
+
     </div>
+
+    <script type = "text/javascript">
+        window.onload = function () {
+            var scrollY = parseInt('<%#Request.Form["scrollY"] %>');
+            if (!isNaN(scrollY)) {
+                window.scrollTo(0, scrollY);
+            }
+        };
+        window.onscroll = function () {
+            var scrollY = document.body.scrollTop;
+            if (scrollY == 0) {
+                if (window.pageYOffset) {
+                    scrollY = window.pageYOffset;
+                }
+                else {
+                    scrollY = (document.body.parentElement) ? document.body.parentElement.scrollTop : 0;
+                }
+            }
+            if (scrollY > 0) {
+                var input = document.getElementById("scrollY");
+                if (input == null) {
+                    input = document.createElement("input");
+                    input.setAttribute("type", "hidden");
+                    input.setAttribute("id", "scrollY");
+                    input.setAttribute("name", "scrollY");
+                    document.forms[0].appendChild(input);
+                }
+                input.value = scrollY;
+            }
+        };
+</script>
+
     </form>
 </body>
 </html>

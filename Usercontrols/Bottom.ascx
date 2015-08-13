@@ -22,8 +22,8 @@
                                                <h4> Follow US On :    </h4> 
                                            </td>
                                            <td>
-                                                <asp:ImageButton ID="social1" runat="server" ImageUrl="~/Images/facebook.jpg"  Height="40px" Width="50px"/>
-                                   <asp:ImageButton ID="ImageButton75" runat="server" ImageUrl="~/Images/google.png" Height="40px" Width="50px" />
+                                                <asp:ImageButton ID="social1" runat="server" ImageUrl="~/Images/facebook.jpg"  Height="40px" Width="50px" OnClick="social1_Click"/>
+                               <%--    <asp:ImageButton ID="ImageButton75" runat="server" ImageUrl="~/Images/google.png" Height="40px" Width="50px" />--%>
                                    <asp:ImageButton ID="ImageButton76" runat="server" ImageUrl="~/Images/twitter.png"  Height="40px" Width="50px"/>
                                            </td>
                                        </tr>

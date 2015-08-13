@@ -46,7 +46,8 @@ public partial class Admin_Amazonoffers : System.Web.UI.Page
             int priority = 2;
             string path = "http://pridecoupons.com/images/"+com+".jpg";
             string tag = txttag.Text;
-            string date = Convert.ToString(System.DateTime.Now);
+           // string date = Convert.ToString(System.DateTime.Now);
+            string date = System.DateTime.Now.ToString("MM/dd/yyyy hh:mm:ss tt");
 
 
             //string qry = "insert into coupons_cat(catagory,subcat,discription,catcode,code,catoffer,company,proiority,imagepath,tag,posteddate)values('" + cat + "','" + subcat + "','" + dis + "','" + code1 + "','" + code + "','" + catcode + "','" + com + "','" + priority + "','" + path + "','" + tag + "','" + date + "')";
@@ -121,6 +122,55 @@ public partial class Admin_Amazonoffers : System.Web.UI.Page
         ddsub.SelectedIndex = -1;
         txtdes.Text = "";
         txttag.Text = "";
+    }
+
+    protected void LinkButton1_Click(object sender, EventArgs e)
+    {
+        //string date11 = DateTime.Now.ToString("MM/dd/yyyy");
+
+        string date11 = DateTime.Now.AddDays(-3).ToString("MM/dd/yyyy");
+
+
+        //string cmd2 = "select top(1) CONVERT(VARCHAR(10),posteddate,101) as date2 from coupons_cat  where  proiority=2 and company='snapdeal'  order by posteddate asc";
+        //SqlDataAdapter sda = new SqlDataAdapter(cmd2, con);
+        //DataSet ds1 = new DataSet();
+        //sda.Fill(ds1);
+
+        string cmd3 = "select CONVERT(VARCHAR(10),posteddate,101) as date1,id from coupons_cat  where proiority=2 and company='Amazon' and  posteddate < '" + date11 + "' order by posteddate asc";
+        SqlDataAdapter sda1 = new SqlDataAdapter(cmd3, con);
+        DataSet ds2 = new DataSet();
+        sda1.Fill(ds2);
+
+        if (ds2.Tables[0].Rows.Count != 0)
+        {
+            string y = "";
+            for (int i = 0; i < ds2.Tables[0].Rows.Count; i++)
+            {
+                y += ds2.Tables[0].Rows[i]["id"].ToString() + ",";
+            }
+
+            y = y.Remove(y.Length - 1);
+            string x = y;
+
+            string s11 = "delete coupons_cat where  id in( " + x + ")";
+            SqlCommand cmd = new SqlCommand(s11, con);
+
+            con.Open();
+            int count = cmd.ExecuteNonQuery();
+            con.Close();
+            if (count == 0)
+            {
+                string strScript = "alert('No Records ');";
+                Page.ClientScript.RegisterStartupScript(this.GetType(), "alertBox", strScript, true);
+            }
+            else
+            {
+                string strScript = "alert('Old Coupons Deleted Successfully ');";
+                Page.ClientScript.RegisterStartupScript(this.GetType(), "alertBox", strScript, true);
+            }
+        }
+
+
     }
   
 }

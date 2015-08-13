@@ -11,7 +11,8 @@ using System.Data;
 public partial class Admin_Add : System.Web.UI.Page
 {
     SqlConnection con = new SqlConnection(ConfigurationManager.AppSettings["ConnectionString"]);
-    string date = DateTime.Now.ToString();
+   // string date = DateTime.Now.ToString();
+    string date = System.DateTime.Now.ToString("MM/dd/yyyy hh:mm:ss tt");
 
     protected void Page_Load(object sender, EventArgs e)
     {

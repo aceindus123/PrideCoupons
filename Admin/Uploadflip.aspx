@@ -21,6 +21,9 @@
                  <td colspan="3" align="center">
                           <asp:LinkButton ID="lnkoffers" runat="server" PostBackUrl="~/Admin/Admin-Homepage.aspx" Text="Home" Font-Underline="false" Font-Size="18px"></asp:LinkButton>
                  </td>
+                    <td  align="center">
+                          <asp:LinkButton ID="LinkButton1" runat="server"  Text="Delete Old Data" Font-Underline="false" Font-Size="18px" OnClick="LinkButton1_Click"></asp:LinkButton>
+                 </td>
              </tr>
              <tr>
                  <td colspan="3" align="center">

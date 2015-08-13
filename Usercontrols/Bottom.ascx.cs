@@ -11,4 +11,10 @@ public partial class Usercontrols_Bottom : System.Web.UI.UserControl
     {
 
     }
+    protected void social1_Click(object sender, ImageClickEventArgs e)
+    {
+        string s = "https://www.facebook.com/pridecoupons";
+        Response.Write("<script type='text/javascript'> window.open('" + s + "','_blank',false); </script>");
+        
+    }
 }

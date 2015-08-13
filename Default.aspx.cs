@@ -19,7 +19,6 @@ public partial class Default : System.Web.UI.Page
     {
         if (!IsPostBack)
         {
-          
             DataSet ds1 = new DataSet();
             DataSet ds2 = new DataSet();
             ds1 = bind();
@@ -35,8 +34,6 @@ public partial class Default : System.Web.UI.Page
 
                 DataList1.DataSource = ds2;
                 DataList1.DataBind();
-                
-             
 
                 if (Convert.ToString(Request.QueryString["tag"]) != null && Request.QueryString["tag"].ToString() != "")
                 {
@@ -71,7 +68,6 @@ public partial class Default : System.Web.UI.Page
                             }
                         }
                     }
-
                     Response.Write("<script type='text/javascript'> window.open('" + s + "','_blank',false); </script>");
                     txt.Focus();
                 }
@@ -118,7 +114,6 @@ public partial class Default : System.Web.UI.Page
                             {
                                 btn2.Text = "Deal Activated";
                                 btn2.CssClass = "btncursor2";
-
                             }
                             else if (code == "NO")
                             {
@@ -128,8 +123,6 @@ public partial class Default : System.Web.UI.Page
                             }
                         }
                     }
-
-
                     Response.Write("<script type='text/javascript'> window.open('" + s + "','_blank',false); </script>");
                     txt1.Focus();
                 }
@@ -192,7 +185,7 @@ public partial class Default : System.Web.UI.Page
         if (e.CommandName == "dlcoupon")
         {
             CustomerID = Convert.ToInt32(e.CommandArgument);
-            Response.Redirect("Default.aspx?tag1=" + CustomerID +"&title="+qq);
+            Response.Redirect("Default.aspx?tag1=" + CustomerID + "&title=" + qq);
         }
     }
 
@@ -221,7 +214,6 @@ public partial class Default : System.Web.UI.Page
         da.Fill(ds);
         return ds;
     }
-
 
     protected void linkmobiles_Click(object sender, EventArgs e)
     {
@@ -357,35 +349,41 @@ public partial class Default : System.Web.UI.Page
     }
 
     protected void lnkmore_Click(object sender, EventArgs e)
-    {
+     {
+        string s ="";
         if (lbltitle.Text == "Mobiles & Electronics Offers")
         {
-            Response.Redirect("ElectronicOffers.aspx");
+             s = "Mobiles & Electronics";
+             Response.Redirect("MoreOffers.aspx?catagory=" + s + "&title=" + lbltitle.Text);
         }
         else if (lbltitle.Text == "Fashion Offers")
         {
-            Response.Redirect("FashionOffers.aspx");
+            s = "Fashions";
+            Response.Redirect("MoreOffers.aspx?catagory=" + s + "&title=" + lbltitle.Text);
         }
         else if (lbltitle.Text == "Travels & Hotels Offers")
         {
-            Response.Redirect("TravelOffers.aspx");
+            s = "Travels & Hotels";
+            Response.Redirect("MoreOffers.aspx?catagory=" + s + "&title=" + lbltitle.Text);
         }
-        else if ( lbltitle.Text == "Home & Furniture Offers")
+        else if (lbltitle.Text == "Home & Furniture Offers")
         {
-            Response.Redirect("KitchenOffers.aspx");
+            s = "Home & Furniture";
+            Response.Redirect("MoreOffers.aspx?catagory=" + s + "&title=" + lbltitle.Text);
         }
         else if (lbltitle.Text == "Food Items Offers")
         {
-            Response.Redirect("FoodOffers.aspx");
+            s = "Food Items";
+            Response.Redirect("MoreOffers.aspx?catagory=" + s + "&title=" + lbltitle.Text);
         }
         else if (lbltitle.Text == "Other Offers")
         {
-            Response.Redirect("OthersOffers.aspx");
+            s = "Others";
+            Response.Redirect("MoreOffers.aspx?catagory=" + s + "&title=" + lbltitle.Text);
         }
-
-
     }
 
+    // top distributors
     protected void LinkButton14_Click(object sender, EventArgs e)
     {
         Response.Redirect("http://www.flipkart.com/");
@@ -406,6 +404,8 @@ public partial class Default : System.Web.UI.Page
     {
         Response.Redirect("http://www.jabong.com/");
     }
+
+    // top brands
     protected void LinkButton9_Click(object sender, EventArgs e)
     {
         Response.Redirect("http://www.samsung.com/in/home");
@@ -426,31 +426,147 @@ public partial class Default : System.Web.UI.Page
     {
         Response.Redirect("http://www.bajajauto.com/");
     }
+
+    // top stores
     protected void LinkButton8_Click(object sender, EventArgs e)
     {
-        Response.Redirect("http://pantaloons.com/");
+        Response.Redirect("http://pantaloons.com/"); //pantaloon
     }
     protected void LinkButton7_Click(object sender, EventArgs e)
     {
-        Response.Redirect("http://www.kewalkiran.com/");
+        Response.Redirect("http://www.kewalkiran.com/"); //kewalkiran
     }
     protected void LinkButton6_Click(object sender, EventArgs e)
     {
-        Response.Redirect("http://www.shoppersstop.com/");
+        Response.Redirect("http://www.shoppersstop.com/"); //shoppers stop
     }
     protected void LinkButton5_Click(object sender, EventArgs e)
     {
-        Response.Redirect("http://www.tata.com/company/profile/Trent");
+        Response.Redirect("http://www.tata.com/company/profile/Trent"); //trent
     }
     protected void lnks1_Click(object sender, EventArgs e)
     {
-        Response.Redirect("http://www.futuregroup.in/");
+        Response.Redirect("http://www.futuregroup.in/"); //future group
     }
+
     // http://dl.flipkart.com/dl/?affid=vyarramse
     // http://www.flipkart.com/
 
 
+    // search script
     // alexa 8,697,033()
-   
+    [System.Web.Script.Services.ScriptMethod()]
+    [System.Web.Services.WebMethod]
+    public static List<string> GetCompletionList(string prefixText)
+    {
+        DataTable dt = new DataTable();
+        string constr = ConfigurationManager.AppSettings["ConnectionString"].ToString();
+        SqlConnection con = new SqlConnection(constr);
+        con.Open();
+        SqlCommand cmd = new SqlCommand("select * from coupons_cat where discription like @City+'%'", con);
+        cmd.Parameters.AddWithValue("@City", prefixText);
+        SqlDataAdapter adp = new SqlDataAdapter(cmd);
+        adp.Fill(dt);
+        List<string> CityNames = new List<string>();
+        for (int i = 0; i < dt.Rows.Count; i++)
+        {
+            CityNames.Add(dt.Rows[i][3].ToString());
+        }
+
+        return CityNames;
+    }
+
+    //protected void ImageButton4_Click(object sender, ImageClickEventArgs e)
+    //{
+    //    Response.Redirect("http://www.shopclues.com/");
+    //}
+    //protected void ImageButton13_Click(object sender, ImageClickEventArgs e)
+    //{
+    //    Response.Redirect("http://www.shopclues.com/mobiles.html");
+    //}
+    //protected void ImageButton19_Click(object sender, ImageClickEventArgs e)
+    //{
+    //    Response.Redirect("http://www.shopclues.com/fashion.html");
+    //}
+
+    protected void serchimgbtn_Click(object sender, ImageClickEventArgs e)
+    {
+        if (txtserch.Text != "")
+        {
+            string s = txtserch.Text;
+            Response.Redirect("SearchResults.aspx?serchid=" + s);
+        }
+        else
+        {
+            Response.Redirect("Default.aspx");
+            txtserch.Text = "";
+        }
+    }
+
+    protected void lnkshop_Click(object sender, EventArgs e)
+    {
+        string s  = "Mobiles & Electronics";
+        lbltitle.Text = "Mobiles & Electronics Offers";
+        Response.Redirect("MoreOffers.aspx?catagory=" + s + "&title=" + lbltitle.Text);
+    }
+
+    protected void lnkshop1_Click(object sender, EventArgs e)
+    {
+        string s = "Fashions";
+        lbltitle.Text = "Fashions Offers";
+        Response.Redirect("MoreOffers.aspx?catagory=" + s + "&title=" + lbltitle.Text);
+    }
+
+    protected void lnkshop2_Click(object sender, EventArgs e)
+    {
+        string s = "Home & Furniture";
+        lbltitle.Text = "Home & Furniture Offers";
+        Response.Redirect("MoreOffers.aspx?catagory=" + s + "&title=" + lbltitle.Text);
+    }
+
+    protected void lnkshop3_Click(object sender, EventArgs e)
+    {
+        string s = "Others";
+        lbltitle.Text = "Others Offers";
+        Response.Redirect("MoreOffers.aspx?catagory=" + s + "&title=" + lbltitle.Text);
+    }
+
+    protected void lnktravel3_Click(object sender, EventArgs e)
+    {
+        Response.Write("<script type='text/javascript'> window.open('https://www.redbus.in','_blank',false); </script>");
+    }
+
+    protected void lnktravel2_Click(object sender, EventArgs e)
+    {
+        Response.Write("<script type='text/javascript'> window.open('http://www.industravels.com/','_blank',false); </script>");
+    }
+
+    protected void lnktravel1_Click(object sender, EventArgs e)
+    {
+        Response.Write("<script type='text/javascript'> window.open('http://www.industravels.com/','_blank',false); </script>");
+    }
+
+    protected void lnktravel_Click(object sender, EventArgs e)
+    {
+        Response.Write("<script type='text/javascript'> window.open('http://www.industravels.com/','_blank',false); </script>");
+    }
+
+    protected void lnkall_Click(object sender, EventArgs e)
+    {
+        top1.Focus();
+    }
+
+    protected void lnktop_Click(object sender, EventArgs e)
+    {
+        top.Visible = false;
+    }
+
+    protected void lnkfood1_Click(object sender, EventArgs e)
+    {
+        string s = "Food Items";
+        lbltitle.Text = "Food Offers";
+        Response.Redirect("MoreOffers.aspx?catagory=" + s + "&title=" + lbltitle.Text);
+       // Response.Write("http://pridecoupons.com/FoodOffers.aspx','_blank',false); </script>");
+    }
 }
 

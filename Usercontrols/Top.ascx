@@ -132,19 +132,39 @@
                           <tr>
                               <td>
                       <asp:TextBox ID="txtserch" runat="server" Height="35px" Width="400px" Font-Size="16px" ></asp:TextBox>
-                                  <ajx:TextBoxWatermarkExtender ID="TextBoxWatermarkExtender1" runat="server" TargetControlID="txtserch" WatermarkText="Search For Your Favourite Store " />
+                                 <%-- <ajx:TextBoxWatermarkExtender ID="TextBoxWatermarkExtender1" runat="server" TargetControlID="txtserch"
+                                       WatermarkText="Search For Your Favourite Store " />--%>
+                 <ajx:AutoCompleteExtender ServiceMethod="GetCompletionList" MinimumPrefixLength="1"
+                    CompletionInterval="10" EnableCaching="false" CompletionSetCount="1" TargetControlID="txtserch"
+                    ID="AutoCompleteExtender1" runat="server" FirstRowSelected="false">
+                </ajx:AutoCompleteExtender>
+
  
-                   
                               </td>
                               <td>
-                      <asp:ImageButton ID="serchimgbtn" runat="server" ImageUrl="~/Images/images.jpg" Height="40px" />
+                                 <asp:ImageButton ID="serchimgbtn" runat="server" ImageUrl="~/Images/images.jpg" Height="40px" OnClick="serchimgbtn_Click" />
 
                               </td>
                           </tr>
+
+                   <%--     <tr ID="listbox" runat="server" visible="false">
+                          <td>
+                               <asp:ListBox ID="list" runat="server" AppendDataBoundItems="true" AutoPostBack="true"></asp:ListBox>
+                        </td>
+                        </tr>--%>
                       </table>
                   </td>
               </tr> 
 
+ <%--       <asp:AutoCompleteExtender ServiceMethod="GetCompletionList" MinimumPrefixLength="1"  
+                    CompletionInterval="10" EnableCaching="false" CompletionSetCount="1" TargetControlID="TextBox1"  
+                    ID="AutoCompleteExtender2" runat="server" FirstRowSelected="false">  
+                </asp:AutoCompleteExtender> 
+
+         <asp:AutoCompleteExtender ServiceMethod="GetCompletionList"   MinimumPrefixLength="1"    
+           CompletionInterval="10"          EnableCaching="false"           CompletionSetCount="1" 
+           TargetControlID="TextBox1"               ID="AutoCompleteExtender3"            runat="server"            FirstRowSelected="false">    
+    </asp:AutoCompleteExtender>   --%>
                           <tr>
                               <td colspan="4" align="center" >
 
